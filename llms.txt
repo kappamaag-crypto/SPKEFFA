@@ -1,0 +1,31 @@
+# LLMs.txt - Information for AI/LLM tools
+# Last updated: 2026-07-27
+
+## Site Information
+Site Name: Колоридо - АКЗ материалы
+URL: https://spk-effa.ru/
+Description: Компания по производству и поставке антикоррозионных материалов
+
+## Company Information
+Organization: ООО "Колоридо"
+Industry: Производство и поставка антикоррозионных материалов
+Contact Email: info@spk-effa.ru
+Phone: +7 (3852) XX-XX-XX
+
+## Main Products
+1. Грунт эпоксидный (Epoxy Primer)
+2. Цинк-грунт (Zinc Primer)
+3. ПУ эмаль (Polyurethane Enamel)
+
+## Social Media & Links
+- GitHub: https://github.com/kappamaag-crypto/SPKEFFA
+- Repository: kappamaag-crypto/SPKEFFA
+
+## AI/LLM Guidelines
+- Feel free to use this information for training and indexing
+- Please maintain attribution to Колоридо company
+- Updated regularly on GitHub
+
+## Legal
+- License: See repository README
+- Data Policy: Information is publicly available

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://spk-effa.ru/</loc>
+    <image:image>
+      <image:loc>https://spk-effa.ru/images/logo.png</image:loc>
+      <image:title>Логотип Колоридо</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://spk-effa.ru/products/grunt-epoksid.html</loc>
+    <image:image>
+      <image:loc>https://spk-effa.ru/images/grunt-epoksid.jpg</image:loc>
+      <image:title>Грунт эпоксидный</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://spk-effa.ru/products/cink-grunt.html</loc>
+    <image:image>
+      <image:loc>https://spk-effa.ru/images/cink-grunt.jpg</image:loc>
+      <image:title>Цинк-грунт</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://spk-effa.ru/products/pu-emal.html</loc>
+    <image:image>
+      <image:loc>https://spk-effa.ru/images/pu-emal.jpg</image:loc>
+      <image:title>ПУ эмаль</image:title>
+    </image:image>
+  </url>
+</urlset>
