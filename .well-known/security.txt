@@ -1,0 +1,13 @@
+Contact: security@spk-effa.ru
+Expires: 2027-07-27T00:00:00.000Z
+Preferred-Languages: ru, en
+Canonical: https://spk-effa.ru/.well-known/security.txt
+
+# Security Policy Information
+# Report security vulnerabilities to: security@spk-effa.ru
+
+# Policy
+Policy: https://spk-effa.ru/security-policy.txt
+
+# Acknowledgments
+Acknowledgments: https://spk-effa.ru/security-acknowledgments.txt
