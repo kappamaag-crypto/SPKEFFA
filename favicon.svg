@@ -1,4 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#1a365d"/>
-  <text x="16" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e67e22" text-anchor="middle">Э</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <!-- Градиент огня -->
+    <linearGradient id="fire" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#7a0000"/>
+      <stop offset="20%" stop-color="#c00000"/>
+      <stop offset="45%" stop-color="#ff2a00"/>
+      <stop offset="70%" stop-color="#ff7a00"/>
+      <stop offset="100%" stop-color="#ffd54a"/>
+    </linearGradient>
+
+    <!-- Свечение -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Черный фон -->
+  <rect width="64" height="64" rx="12" fill="#000000"/>
+
+  <!-- Буква -->
+  <text
+      x="32"
+      y="49"
+      text-anchor="middle"
+      font-family="Arial Black, Segoe UI Black, sans-serif"
+      font-size="46"
+      font-weight="900"
+      fill="url(#fire)"
+      filter="url(#glow)">
+    Э
+  </text>
 </svg>
