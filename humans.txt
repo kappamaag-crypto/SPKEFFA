@@ -1,0 +1,32 @@
+/* HUMANSTXT.ORG */
+/* Tell the world about the people behind this site */
+
+/* TEAM */
+  Name: kappamaag-crypto
+  Site: https://github.com/kappamaag-crypto
+  Twitter: @kappamaag
+
+/* SITE */
+  Last update: 2026-07-27
+  Language: Russian / Русский
+  Doctype: HTML5
+  IDE: GitHub, VS Code
+  Version Control: Git
+
+/* THANKS */
+  Thanks to all contributors and supporters
+
+/* COMMENTS */
+  This website is proudly built with:
+  - HTML5
+  - CSS3
+  - Responsive Design
+  - Accessibility Focus
+  
+  Project Repository: https://github.com/kappamaag-crypto/SPKEFFA
+  Static Site Generator: GitHub Pages
+
+/* STANDARDS */
+  HTML: https://html.spec.whatwg.org/
+  CSS: https://www.w3.org/Style/CSS/
+  Web Standards: https://www.w3.org/
