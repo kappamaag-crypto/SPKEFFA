@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <!-- Этот sitemap будет использоваться при появлении новостей на сайте -->
+  <!-- Пример структуры для новости: -->
+  <!--
+  <url>
+    <loc>https://spk-effa.ru/news/article-title.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Колоридо</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-27T12:00:00+03:00</news:publication_date>
+      <news:title>Заголовок новости</news:title>
+      <news:keywords>ключевые, слова</news:keywords>
+    </news:news>
+  </url>
+  -->
+</urlset>
