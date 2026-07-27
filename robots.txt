@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Host: spk-effa.ru
 Sitemap: https://spk-effa.ru/sitemap.xml
