@@ -96,7 +96,6 @@ a {
   font-size: 0.95rem;
 }
 
-/* Mobile menu toggle */
 .nav-toggle {
   display: none;
   background: none;
@@ -241,25 +240,12 @@ a {
   box-shadow: var(--shadow);
 }
 
-.vector-num {
-  display: inline-block;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--color-accent);
-  margin-bottom: 12px;
-}
-
 .vector h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: var(--color-primary);
 }
 
-.vector p {
-  color: var(--color-text-light);
-  font-size: 0.95rem;
-  text-align: left;
-}
 .vector ul {
   margin: 15px 0 0;
   padding-left: 20px;
@@ -270,10 +256,6 @@ a {
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 10px;
-}
-
-.vector li:last-child {
-  margin-bottom: 0;
 }
 
 /* ===== Partners ===== */
@@ -370,6 +352,55 @@ a {
 .product-info p {
   font-size: 0.95rem;
   color: var(--color-text-light);
+}
+
+/* ===== FAQ ===== */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  background: white;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 16px 20px;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item .faq-answer {
+  padding: 0 20px 16px;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 /* ===== Advantages ===== */
