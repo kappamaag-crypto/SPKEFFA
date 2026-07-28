@@ -4,29 +4,34 @@
   <url>
     <loc>https://spk-effa.ru/</loc>
     <image:image>
-      <image:loc>https://spk-effa.ru/images/logo.png</image:loc>
-      <image:title>Логотип СПК ЭФФА</image:title>
+      <image:loc>https://spk-effa.ru/favicon.png</image:loc>
+      <image:title>СПК ЭФФА — официальный представитель Blank, ЭФФА, Veksa</image:title>
+      <image:caption>Логотип и брендинг ООО СПК ЭФФА</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://spk-effa.ru/favicon.svg</image:loc>
+      <image:title>Иконка СПК ЭФФА</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://spk-effa.ru/products/grunt-epoksid.html</loc>
+    <loc>https://spk-effa.ru/blank/</loc>
     <image:image>
-      <image:loc>https://spk-effa.ru/images/grunt-epoksid.jpg</image:loc>
-      <image:title>Грунт эпоксидный</image:title>
+      <image:loc>https://spk-effa.ru/favicon.png</image:loc>
+      <image:title>Blank — антикоррозионные материалы</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://spk-effa.ru/products/cink-grunt.html</loc>
+    <loc>https://spk-effa.ru/ognezaschita/</loc>
     <image:image>
-      <image:loc>https://spk-effa.ru/images/cink-grunt.jpg</image:loc>
-      <image:title>Цинк-грунт</image:title>
+      <image:loc>https://spk-effa.ru/favicon.png</image:loc>
+      <image:title>Огнезащита ЭФФА — огнезащитные составы R15–R150</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://spk-effa.ru/products/pu-emal.html</loc>
+    <loc>https://spk-effa.ru/veksa/</loc>
     <image:image>
-      <image:loc>https://spk-effa.ru/images/pu-emal.jpg</image:loc>
-      <image:title>ПУ эмаль</image:title>
+      <image:loc>https://spk-effa.ru/favicon.png</image:loc>
+      <image:title>Veksa — полиуретановые наливные полы</image:title>
     </image:image>
   </url>
 </urlset>

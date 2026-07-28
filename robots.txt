@@ -4,7 +4,9 @@
 # === Основные правила для всех роботов ===
 User-agent: *
 Allow: /
+# Файл подтверждения Яндекс.Вебмастер — не для индексации
 Disallow: /yandex_263ea89542f6f9ea.html
+# Служебные файлы (security.txt и т.п.)
 Disallow: /.well-known/
 
 # === Google ===
