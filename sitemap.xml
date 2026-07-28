@@ -24,4 +24,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+  <loc>https://spk-effa.ru/products/sistema-akz.html</loc>
+  <lastmod>2026-07-27</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://spk-effa.ru/products/rezervuar.html</loc>
+  <lastmod>2026-07-27</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://spk-effa.ru/products/grunt-emal-1k.html</loc>
+  <lastmod>2026-07-27</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
 </urlset>
