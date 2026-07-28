@@ -227,7 +227,21 @@ a {
   font-size: 0.95rem;
   text-align: left;
 }
+.vector ul {
+  margin: 15px 0 0;
+  padding-left: 20px;
+}
 
+.vector li {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.vector li:last-child {
+  margin-bottom: 0;
+}
 /* ===== Products ===== */
 .products-grid {
   display: grid;
