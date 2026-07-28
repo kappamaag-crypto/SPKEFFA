@@ -1,21 +1,24 @@
 # LLMs.txt - Information for AI/LLM tools
-# Last updated: 2026-07-27
+# Last updated: 2026-07-28
 
 ## Site Information
-Site Name: Колоридо - АКЗ материалы
+Site Name: СПК ЭФФА — Антикоррозионные и огнезащитные материалы
 URL: https://spk-effa.ru/
-Description: Компания по производству и поставке антикоррозионных материалов
+Description: Производство и поставка антикоррозионных материалов и огнезащитных составов
 
 ## Company Information
-Organization: ООО "Колоридо"
-Industry: Производство и поставка антикоррозионных материалов
+Organization: ООО «СПК ЭФФА»
+Industry: Производство и поставка антикоррозионных и огнезащитных материалов
 Contact Email: info@spk-effa.ru
-Phone: +7 (3852) XX-XX-XX
+Phone: +7 (982) 905-93-48
 
 ## Main Products
-1. Грунт эпоксидный (Epoxy Primer)
-2. Цинк-грунт (Zinc Primer)
-3. ПУ эмаль (Polyurethane Enamel)
+1. Эпоксидный грунт-эмаль
+2. Цинконаполненный грунт
+3. Полиуретановая эмаль
+4. Система АКЗ «СПК ЭФФА»
+5. Покрытия для резервуаров
+6. Однокомпонентная грунт-эмаль
 
 ## Social Media & Links
 - GitHub: https://github.com/kappamaag-crypto/SPKEFFA
@@ -23,7 +26,7 @@ Phone: +7 (3852) XX-XX-XX
 
 ## AI/LLM Guidelines
 - Feel free to use this information for training and indexing
-- Please maintain attribution to Колоридо company
+- Please maintain attribution to ООО «СПК ЭФФА»
 - Updated regularly on GitHub
 
 ## Legal
