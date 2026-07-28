@@ -1,5 +1,46 @@
+# robots.txt для https://spk-effa.ru/
+# Обновлено: 2026-07-28
+
+# === Основные правила для всех роботов ===
 User-agent: *
 Allow: /
+Disallow: /yandex_263ea89542f6f9ea.html
+Disallow: /.well-known/
 
-Host: spk-effa.ru
+# === Google ===
+User-agent: Googlebot
+Allow: /
+Disallow: /yandex_263ea89542f6f9ea.html
+Disallow: /.well-known/
+
+User-agent: Googlebot-Image
+Allow: /
+
+# === Яндекс ===
+User-agent: Yandex
+Allow: /
+Disallow: /yandex_263ea89542f6f9ea.html
+Disallow: /.well-known/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ysclid&gclid&fbclid
+
+User-agent: YandexBot
+Allow: /
+Disallow: /yandex_263ea89542f6f9ea.html
+Disallow: /.well-known/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ysclid&gclid&fbclid
+
+User-agent: YandexImages
+Allow: /
+
+# === Bing ===
+User-agent: bingbot
+Allow: /
+Disallow: /yandex_263ea89542f6f9ea.html
+Disallow: /.well-known/
+
+# === Главное зеркало (Яндекс) ===
+Host: https://spk-effa.ru
+
+# === Карты сайта ===
 Sitemap: https://spk-effa.ru/sitemap.xml
+Sitemap: https://spk-effa.ru/sitemap-image.xml
