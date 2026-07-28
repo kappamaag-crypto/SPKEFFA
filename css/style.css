@@ -354,6 +354,31 @@ a {
   color: var(--color-text-light);
 }
 
+/* ===== Spec tables (product pages) ===== */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 32px;
+  font-size: 0.95rem;
+}
+
+.spec-table th,
+.spec-table td {
+  border: 1px solid var(--color-border);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.spec-table th {
+  background: var(--color-bg);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.spec-table tr:nth-child(even) {
+  background: #fafbfc;
+}
+
 /* ===== FAQ ===== */
 .faq-list {
   max-width: 800px;
