@@ -53,8 +53,8 @@
       messengers.setAttribute('aria-label', 'Мессенджеры');
       messengers.innerHTML =
         '<a class="msg-btn msg-wa" href="https://wa.me/' + PHONE + '" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">WA</a>' +
-        '<a class="msg-btn msg-tg" href="https://t.me/+' + PHONE + '" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram">TG</a>' +
-        '<a class="msg-btn msg-max" href="https://max.ru/" target="_blank" rel="noopener noreferrer" title="Max" aria-label="Max">Max</a>';
+        '<a class="msg-btn msg-tg" href="https://t.me/kappam6abless" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram">TG</a>' +
+        '<a class="msg-btn msg-max" href="https://max.ru/u/f9LHodD0cOK1_MzS_d0c5a3nP4p3wlhHK73nirp7wU3DQbRRzM8P8lkkhII" target="_blank" rel="noopener noreferrer" title="Max" aria-label="Max">Max</a>';
       var phoneEl = header.querySelector('.header-phone');
       if (phoneEl) header.insertBefore(messengers, phoneEl);
       else header.appendChild(messengers);
@@ -115,8 +115,8 @@
           '</p>' +
           '<p class="footer-messengers">' +
             '<a href="https://wa.me/' + PHONE + '" target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
-            ' · <a href="https://t.me/+' + PHONE + '" target="_blank" rel="noopener noreferrer">Telegram</a>' +
-            ' · <a href="https://max.ru/" target="_blank" rel="noopener noreferrer">Max</a>' +
+            ' · <a href="https://t.me/kappam6abless" target="_blank" rel="noopener noreferrer">Telegram</a>' +
+            ' · <a href="https://max.ru/u/f9LHodD0cOK1_MzS_d0c5a3nP4p3wlhHK73nirp7wU3DQbRRzM8P8lkkhII" target="_blank" rel="noopener noreferrer">Max</a>' +
           '</p>' +
         '</div>' +
         '<nav class="footer-nav" aria-label="Разделы сайта">' +
