@@ -1,5 +1,5 @@
 /**
- * Единое меню + гамбургер + логотип + единый футер на всех страницах.
+ * Единое меню + гамбургер + логотип + единый футер + нормализация кнопок документации.
  */
 (function () {
   function ensureNav() {
@@ -102,9 +102,35 @@
       '</div>';
   }
 
+  /** Единые подписи кнопок документации на всех страницах */
+  function normalizeDocButtons() {
+    document.querySelectorAll('a.doc-btn').forEach(function (a) {
+      var t = (a.textContent || '').replace(/\s+/g, ' ').trim();
+      if (/ТД\s*\/?\s*паспорт/i.test(t) || /^📄?\s*ТД/i.test(t)) {
+        a.innerHTML = '📄 TDS / технический паспорт';
+      }
+      if (/Запросить/i.test(t) && (/комплект/i.test(t) || /протокол/i.test(t))) {
+        a.innerHTML = '✉ Запросить комплект документации';
+      }
+    });
+  }
+
+  /** Обернуть таблицы .spec-table в .table-wrap, если ещё не обёрнуты */
+  function wrapSpecTables() {
+    document.querySelectorAll('table.spec-table').forEach(function (table) {
+      if (table.parentElement && table.parentElement.classList.contains('table-wrap')) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'table-wrap';
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    });
+  }
+
   function init() {
     ensureNav();
     ensureFooter();
+    normalizeDocButtons();
+    wrapSpecTables();
   }
 
   if (document.readyState === 'loading') {
