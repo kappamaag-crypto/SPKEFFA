@@ -1,0 +1,26 @@
+/* Product photos */
+.product-image--photo {
+  background: #f4f5f7;
+  padding: 12px;
+}
+.product-image--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.product-photo-wrap {
+  text-align: center;
+  margin: 0 0 28px;
+  background: #f7f9fc;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+}
+.product-photo {
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
