@@ -102,10 +102,15 @@
       '</div>';
   }
 
-  /** Единые подписи кнопок документации на всех страницах */
+  /** Единые подписи кнопок; протоколы из блока документации убираем */
   function normalizeDocButtons() {
     document.querySelectorAll('a.doc-btn').forEach(function (a) {
       var t = (a.textContent || '').replace(/\s+/g, ' ').trim();
+      var href = (a.getAttribute('href') || '').toLowerCase();
+      if (/протокол/i.test(t) || /protokol/i.test(href)) {
+        a.remove();
+        return;
+      }
       if (/ТД\s*\/?\s*паспорт/i.test(t) || /^📄?\s*ТД/i.test(t)) {
         a.innerHTML = '📄 TDS / технический паспорт';
       }
