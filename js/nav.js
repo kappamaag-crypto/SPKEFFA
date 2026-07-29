@@ -1,5 +1,5 @@
 /**
- * Единое меню + гамбургер + логотип СПК ЭФФА на всех страницах.
+ * Единое меню + гамбургер + логотип + единый футер на всех страницах.
  */
 (function () {
   function ensureNav() {
@@ -67,9 +67,49 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ensureNav);
-  } else {
+  function ensureFooter() {
+    var footer = document.querySelector('footer.footer');
+    if (!footer) {
+      footer = document.createElement('footer');
+      footer.className = 'footer';
+      document.body.appendChild(footer);
+    }
+    footer.innerHTML =
+      '<div class="container footer-inner">' +
+        '<div class="footer-left">' +
+          '<a href="/" class="logo footer-logo">' +
+            '<img src="/img/logo-spk-effa-mark.svg" alt="" class="logo-img" width="40" height="28" style="filter:brightness(0) invert(1)">' +
+            '<span class="logo-text">СПК ЭФФА</span>' +
+          '</a>' +
+          '<p>Официальный представитель ТМ Blank, ЭФФА и Veksa.</p>' +
+          '<p class="footer-contacts">' +
+            '<a href="tel:+79829059348">+7 (982) 905-93-48</a>' +
+            ' · ' +
+            '<a href="mailto:info@spk-effa.ru">info@spk-effa.ru</a>' +
+          '</p>' +
+        '</div>' +
+        '<nav class="footer-nav" aria-label="Разделы сайта">' +
+          '<a href="/blank/">Blank</a>' +
+          '<a href="/ognezaschita/">Огнезащита</a>' +
+          '<a href="/veksa/">Veksa</a>' +
+          '<a href="/raschet.html">Расчёт</a>' +
+          '<a href="/#contacts">Контакты</a>' +
+        '</nav>' +
+        '<div class="footer-right">' +
+          '<p>© 2024–2026 ООО «СПК ЭФФА».</p>' +
+          '<p class="footer-address">г. Уфа, ул. Революционная, 221, оф. 208</p>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function init() {
     ensureNav();
+    ensureFooter();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
