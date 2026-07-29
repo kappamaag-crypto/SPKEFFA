@@ -1,20 +1,13 @@
 /**
- * Единое меню + гамбургер для всех страниц сайта.
- * Подключать: /js/nav.js или ../js/nav.js
+ * Единое меню + гамбургер. Логотип всегда ведёт на https://spk-effa.ru/ (без index.html).
  */
 (function () {
-  function rootPrefix() {
-    var p = location.pathname || '';
-    if (/\/(blank|ognezaschita|veksa)(\/|$)/.test(p)) return '../';
-    return '';
-  }
-
   function ensureNav() {
     var header = document.querySelector('.header-inner');
     if (!header) return;
 
-    var r = rootPrefix();
-    var home = r ? r + 'index.html' : 'index.html';
+    var logo = header.querySelector('a.logo');
+    if (logo) logo.setAttribute('href', '/');
 
     var nav = header.querySelector('.nav');
     if (!nav) {
@@ -26,12 +19,12 @@
     }
 
     nav.innerHTML =
-      '<a href="' + home + '#about">О компании</a>' +
-      '<a href="' + r + 'blank/">Blank</a>' +
-      '<a href="' + r + 'ognezaschita/">Огнезащита</a>' +
-      '<a href="' + r + 'veksa/">Veksa</a>' +
-      '<a href="' + r + 'raschet.html">Расчёт</a>' +
-      '<a href="' + home + '#contacts">Контакты</a>';
+      '<a href="/#about">О компании</a>' +
+      '<a href="/blank/">Blank</a>' +
+      '<a href="/ognezaschita/">Огнезащита</a>' +
+      '<a href="/veksa/">Veksa</a>' +
+      '<a href="/raschet.html">Расчёт</a>' +
+      '<a href="/#contacts">Контакты</a>';
 
     var toggle = header.querySelector('.nav-toggle');
     if (!toggle) {
