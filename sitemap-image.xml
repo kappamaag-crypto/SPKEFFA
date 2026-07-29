@@ -2,36 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://spk-effa.ru/</loc>
-    <image:image>
-      <image:loc>https://spk-effa.ru/favicon.png</image:loc>
-      <image:title>СПК ЭФФА — официальный представитель Blank, ЭФФА, Veksa</image:title>
-      <image:caption>Логотип и брендинг ООО СПК ЭФФА</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://spk-effa.ru/favicon.svg</image:loc>
-      <image:title>Иконка СПК ЭФФА</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://spk-effa.ru/blank/</loc>
-    <image:image>
-      <image:loc>https://spk-effa.ru/favicon.png</image:loc>
-      <image:title>Blank — антикоррозионные материалы</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://spk-effa.ru/ognezaschita/</loc>
-    <image:image>
-      <image:loc>https://spk-effa.ru/favicon.png</image:loc>
-      <image:title>Огнезащита ЭФФА — огнезащитные составы R15–R150</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://spk-effa.ru/veksa/</loc>
-    <image:image>
-      <image:loc>https://spk-effa.ru/favicon.png</image:loc>
-      <image:title>Veksa — полиуретановые наливные полы</image:title>
-    </image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20One.png</image:loc><image:title>Blank One</image:title></image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20Universal.png</image:loc><image:title>Blank Universal</image:title></image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20FINISH.png</image:loc><image:title>Blank Finish</image:title></image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20HP.png</image:loc><image:title>Blank HP</image:title></image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20Tank.png</image:loc><image:title>Blank Tank</image:title></image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20Tank%20LP.png</image:loc><image:title>Blank Tank LP</image:title></image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20MIO.png</image:loc><image:title>Blank MIO</image:title></image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20DTM.png</image:loc><image:title>Blank DTM</image:title></image:image>
+    <image:image><image:loc>https://spk-effa.ru/img/products/Blank%20ZINC.png</image:loc><image:title>Blank Zinc</image:title></image:image>
   </url>
 </urlset>
