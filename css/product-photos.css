@@ -2,6 +2,8 @@
 .product-image--photo {
   background: #f4f5f7;
   padding: 12px;
+  height: 180px;
+  overflow: hidden;
 }
 .product-image--photo img {
   width: 100%;
