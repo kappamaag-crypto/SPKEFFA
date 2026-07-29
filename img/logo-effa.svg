@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 140" role="img" aria-label="ЭФФА — современная огнезащита">
+  <title>ЭФФА</title>
+  <!-- Nested hexagons -->
+  <g transform="translate(70,70)">
+    <polygon points="0,-48 41.6,-24 41.6,24 0,48 -41.6,24 -41.6,-24" fill="none" stroke="#E87722" stroke-width="5"/>
+    <polygon points="0,-34 29.4,-17 29.4,17 0,34 -29.4,17 -29.4,-17" fill="none" stroke="#E87722" stroke-width="4"/>
+    <polygon points="0,-20 17.3,-10 17.3,10 0,20 -17.3,10 -17.3,-10" fill="none" stroke="#E87722" stroke-width="3.5"/>
+  </g>
+  <text x="150" y="68" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#E87722">ЭФФА</text>
+  <text x="150" y="98" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6B7280" letter-spacing="1">современная огнезащита</text>
+</svg>

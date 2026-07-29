@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-label="VEKSA">
+  <title>VEKSA</title>
+  <!-- Mark: stacked chevron / V with horizontal bars -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 22 L58 22 L72 48 L58 74 L28 74 L42 48 Z" fill="#2B9BD6"/>
+    <path d="M34 30 H52" stroke="#fff" stroke-width="5"/>
+    <path d="M32 40 H54" stroke="#fff" stroke-width="5"/>
+    <path d="M30 50 H56" stroke="#fff" stroke-width="5"/>
+    <path d="M32 60 H54" stroke="#fff" stroke-width="5"/>
+    <path d="M34 70 H52" stroke="#fff" stroke-width="5"/>
+  </g>
+  <!-- accent bar bottom-left -->
+  <rect x="22" y="78" width="28" height="6" rx="1" fill="#E87722"/>
+  <!-- secondary dark bar -->
+  <rect x="22" y="88" width="18" height="5" rx="1" fill="#1B3A5F"/>
+  <!-- Wordmark -->
+  <text x="100" y="72" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="4" fill="#1A1A1A">VEKSA</text>
+</svg>

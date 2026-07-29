@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" role="img" aria-label="СПК ЭФФА">
+  <title>СПК ЭФФА</title>
+  <g transform="translate(60,40)">
+    <g transform="translate(-22,0)">
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" fill="none" stroke="#2C3E6B" stroke-width="4"/>
+      <polygon points="0,-20 17.3,-10 17.3,10 0,20 -17.3,10 -17.3,-10" fill="none" stroke="#2C3E6B" stroke-width="3"/>
+    </g>
+    <g transform="translate(22,0)">
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" fill="none" stroke="#E87722" stroke-width="4"/>
+      <polygon points="0,-20 17.3,-10 17.3,10 0,20 -17.3,10 -17.3,-10" fill="none" stroke="#E87722" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
