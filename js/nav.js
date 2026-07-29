@@ -1,5 +1,5 @@
 /**
- * Единое меню + гамбургер. Логотип всегда ведёт на https://spk-effa.ru/ (без index.html).
+ * Единое меню + гамбургер + логотип СПК ЭФФА на всех страницах.
  */
 (function () {
   function ensureNav() {
@@ -7,7 +7,15 @@
     if (!header) return;
 
     var logo = header.querySelector('a.logo');
-    if (logo) logo.setAttribute('href', '/');
+    if (!logo) {
+      logo = document.createElement('a');
+      logo.className = 'logo';
+      header.insertBefore(logo, header.firstChild);
+    }
+    logo.setAttribute('href', '/');
+    logo.innerHTML =
+      '<img src="/img/logo-spk-effa-mark.svg" alt="" class="logo-img" width="48" height="32">' +
+      '<span class="logo-text">СПК ЭФФА</span>';
 
     var nav = header.querySelector('.nav');
     if (!nav) {
