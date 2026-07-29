@@ -30,6 +30,7 @@
       '<a href="' + r + 'blank/">Blank</a>' +
       '<a href="' + r + 'ognezaschita/">Огнезащита</a>' +
       '<a href="' + r + 'veksa/">Veksa</a>' +
+      '<a href="' + r + 'raschet.html">Расчёт</a>' +
       '<a href="' + home + '#contacts">Контакты</a>';
 
     var toggle = header.querySelector('.nav-toggle');

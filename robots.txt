@@ -1,48 +1,45 @@
 # robots.txt для https://spk-effa.ru/
-# Обновлено: 2026-07-28
+# Обновлено: 2026-07-29
 
-# === Основные правила для всех роботов ===
 User-agent: *
 Allow: /
-# Файл подтверждения Яндекс.Вебмастер — не для индексации
 Disallow: /yandex_263ea89542f6f9ea.html
-# Служебные файлы (security.txt и т.п.)
 Disallow: /.well-known/
+Disallow: /docs/README.md
 
-# === Google ===
 User-agent: Googlebot
 Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
+Disallow: /docs/README.md
 
 User-agent: Googlebot-Image
 Allow: /
 
-# === Яндекс ===
 User-agent: Yandex
 Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
+Disallow: /docs/README.md
 Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ysclid&gclid&fbclid
 
 User-agent: YandexBot
 Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
+Disallow: /docs/README.md
 Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ysclid&gclid&fbclid
 
 User-agent: YandexImages
 Allow: /
 
-# === Bing ===
 User-agent: bingbot
 Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
+Disallow: /docs/README.md
 
-# === Главное зеркало (Яндекс) ===
 Host: https://spk-effa.ru
 
-# === Карты сайта ===
 Sitemap: https://spk-effa.ru/sitemap.xml
 Sitemap: https://spk-effa.ru/sitemap-image.xml
