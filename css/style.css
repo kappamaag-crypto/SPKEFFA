@@ -72,6 +72,22 @@ a {
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
 }
 
 .nav {
@@ -223,6 +239,19 @@ a {
   font-size: 1.1rem;
 }
 
+.section-title-with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-title-with-logo img {
+  height: 40px;
+  width: auto;
+}
+
 /* ===== About ===== */
 .about {
   background: var(--color-bg);
@@ -286,6 +315,21 @@ a {
   text-align: center;
 }
 
+.partner-logo {
+  height: 56px;
+  width: auto;
+  max-width: 220px;
+  margin: 0 auto 20px;
+  object-fit: contain;
+}
+
+.partner-logo.blank {
+  height: 48px;
+  background: #2a2a2a;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
 .partner-card h3 {
   color: var(--color-primary);
   font-size: 1.2rem;
@@ -309,6 +353,47 @@ a {
   font-weight: 600;
   color: var(--color-primary);
   font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.partner-brands img {
+  height: 28px;
+  width: auto;
+}
+
+.partner-brands img.blank-sm {
+  height: 24px;
+  background: #2a2a2a;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* ===== Brand logos strip ===== */
+.brand-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0 8px;
+}
+
+.brand-logos img {
+  height: 44px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+.brand-logos img.blank {
+  height: 36px;
+  background: #2a2a2a;
+  padding: 8px 14px;
+  border-radius: 6px;
 }
 
 /* ===== Products ===== */
@@ -796,6 +881,14 @@ a {
   .footer-inner {
     flex-direction: column;
     text-align: center;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .logo-img {
+    height: 30px;
   }
 }
 
