@@ -28,9 +28,9 @@
 
     nav.innerHTML =
       '<a href="/#about">О компании</a>' +
-      '<a href="/blank/">Blank</a>' +
+      '<a href="/blank/">Антикор (Blank)</a>' +
       '<a href="/ognezaschita/">Огнезащита</a>' +
-      '<a href="/veksa/">Veksa</a>' +
+      '<a href="/veksa/">Наливные полы (Veksa)</a>' +
       '<a href="/raschet.html">Расчёт</a>' +
       '<a href="/#contacts">Контакты</a>';
 
@@ -89,9 +89,9 @@
           '</p>' +
         '</div>' +
         '<nav class="footer-nav" aria-label="Разделы сайта">' +
-          '<a href="/blank/">Blank</a>' +
+          '<a href="/blank/">Антикор (Blank)</a>' +
           '<a href="/ognezaschita/">Огнезащита</a>' +
-          '<a href="/veksa/">Veksa</a>' +
+          '<a href="/veksa/">Наливные полы (Veksa)</a>' +
           '<a href="/raschet.html">Расчёт</a>' +
           '<a href="/#contacts">Контакты</a>' +
         '</nav>' +
