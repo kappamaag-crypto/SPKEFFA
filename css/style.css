@@ -398,7 +398,7 @@ a {
 .brand-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 28px;
+  gap: 14px 18px;
   justify-content: center;
   align-items: center;
   margin: 20px 0 8px;
@@ -416,6 +416,46 @@ a {
   background: #2a2a2a;
   padding: 6px 12px;
   border-radius: 6px;
+}
+
+/* White pills on dark hero — readable logos */
+.hero .brand-logos {
+  gap: 12px 14px;
+  margin: 8px 0 32px;
+}
+
+.hero .brand-logo-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 12px 18px;
+  min-height: 56px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero .brand-logo-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hero .brand-logo-pill img {
+  height: 36px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.hero .brand-logo-pill img.blank {
+  height: 28px;
+  /* Blank already has dark fill in SVG — keep as is on white */
+  background: #2a2a2a !important;
+  padding: 6px 10px !important;
+  border-radius: 4px;
 }
 
 /* ===== Products ===== */
@@ -945,6 +985,16 @@ a {
     height: 28px;
   }
 
+  .hero .brand-logo-pill {
+    padding: 10px 14px;
+    min-height: 48px;
+  }
+
+  .hero .brand-logo-pill img {
+    height: 30px;
+    max-width: 110px;
+  }
+
   .section-title-with-logo img {
     height: 34px;
   }
@@ -995,12 +1045,17 @@ a {
   }
 
   .brand-logos {
-    gap: 12px 16px;
+    gap: 10px;
   }
 
-  .brand-logos img {
-    height: 30px;
-    max-width: 46vw;
+  .hero .brand-logo-pill {
+    padding: 8px 12px;
+    min-height: 44px;
+  }
+
+  .hero .brand-logo-pill img {
+    height: 26px;
+    max-width: 96px;
   }
 
   .docs-grid {
