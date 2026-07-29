@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-label="ЭФФА — современная огнезащита">
+  <title>ЭФФА — современная огнезащита</title>
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <g transform="translate(78,62)" stroke="#312935">
+      <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21" stroke-width="5"/>
+      <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" stroke-width="4"/>
+      <polygon points="0,-18 15.6,-9 15.6,9 0,18 -15.6,9 -15.6,-9" stroke-width="3.5"/>
+    </g>
+    <g transform="translate(128,62)" stroke="#E57C35">
+      <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21" stroke-width="5"/>
+      <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" stroke-width="4"/>
+      <polygon points="0,-18 15.6,-9 15.6,9 0,18 -15.6,9 -15.6,-9" stroke-width="3.5"/>
+    </g>
+  </g>
+  <text x="190" y="58" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#312935">ЭФФА</text>
+  <line x1="190" y1="72" x2="400" y2="72" stroke="#E57C35" stroke-width="2"/>
+  <text x="190" y="96" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#312935">современная огнезащита</text>
+</svg>
