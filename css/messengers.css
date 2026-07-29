@@ -1,0 +1,84 @@
+/* Мессенджеры в шапке */
+.header-messengers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.msg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.msg-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.msg-wa { background: #25d366; }
+.msg-tg { background: #2aabee; }
+.msg-max { background: #7b61ff; }
+
+.footer-messengers {
+  margin-top: 8px;
+  font-size: 0.88rem;
+}
+
+.footer-messengers a {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.footer-messengers a:hover {
+  color: var(--color-accent, #e67e22);
+}
+
+/* Согласие 152-ФЗ */
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 12px 0 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-light, #718096);
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.consent-check input {
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.consent-check a {
+  color: var(--color-primary, #1a365d);
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .header-messengers {
+    order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .msg-btn {
+    min-width: 30px;
+    height: 28px;
+    padding: 0 6px;
+    font-size: 0.65rem;
+  }
+}
