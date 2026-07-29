@@ -1,9 +1,18 @@
 /**
- * Единое меню, футер, мессенджеры, нормализация кнопок, BreadcrumbList JSON-LD.
+ * Единое меню, футер, мессенджеры, нормализация кнопок, BreadcrumbList JSON-LD, согласие 152-ФЗ.
  */
 (function () {
   var PHONE = '79829059348';
   var PHONE_DISPLAY = '+7 (982) 905-93-48';
+
+  function ensureStyles() {
+    if (document.getElementById('css-messengers')) return;
+    var link = document.createElement('link');
+    link.id = 'css-messengers';
+    link.rel = 'stylesheet';
+    link.href = '/css/messengers.css';
+    document.head.appendChild(link);
+  }
 
   function ensureNav() {
     var header = document.querySelector('.header-inner');
@@ -37,7 +46,6 @@
       '<a href="/raschet.html">Расчёт</a>' +
       '<a href="/#contacts">Контакты</a>';
 
-    /* Мессенджеры рядом с телефоном */
     var messengers = header.querySelector('.header-messengers');
     if (!messengers) {
       messengers = document.createElement('div');
@@ -153,21 +161,19 @@
     });
   }
 
-  /** BreadcrumbList JSON-LD из видимых .breadcrumb */
   function injectBreadcrumbJsonLd() {
     var el = document.querySelector('.breadcrumb');
     if (!el || document.getElementById('ld-breadcrumb')) return;
 
     var items = [];
     var position = 1;
-    var links = el.querySelectorAll('a');
-    links.forEach(function (a) {
+    el.querySelectorAll('a').forEach(function (a) {
       var href = a.getAttribute('href') || '';
       var name = (a.textContent || '').trim();
       if (!name) return;
       var url = href;
       if (href.indexOf('http') !== 0) {
-        if (href === '/' || href === '' || href === 'index.html' && !href.includes('/')) {
+        if (href === '/' || href === '') {
           url = 'https://spk-effa.ru/';
         } else if (href.charAt(0) === '/') {
           url = 'https://spk-effa.ru' + href;
@@ -179,15 +185,9 @@
           }
         }
       }
-      items.push({
-        '@type': 'ListItem',
-        position: position++,
-        name: name,
-        item: url
-      });
+      items.push({ '@type': 'ListItem', position: position++, name: name, item: url });
     });
 
-    /* Текущая страница (текст после последней ссылки) */
     var full = (el.textContent || '').replace(/\s+/g, ' ').trim();
     var parts = full.split('/').map(function (s) { return s.trim(); }).filter(Boolean);
     if (parts.length && items.length && parts[parts.length - 1] !== items[items.length - 1].name) {
@@ -212,7 +212,6 @@
     document.head.appendChild(script);
   }
 
-  /** Согласие 152-ФЗ в формах, если ещё нет */
   function ensureFormConsent() {
     document.querySelectorAll('form').forEach(function (form) {
       if (form.querySelector('.consent-check')) return;
@@ -224,7 +223,6 @@
       wrap.innerHTML =
         '<input type="checkbox" name="privacy_consent" value="yes" required>' +
         '<span>Согласен на <a href="/privacy.html" target="_blank" rel="noopener">обработку персональных данных</a></span>';
-
       btn.parentNode.insertBefore(wrap, btn);
 
       var note = form.querySelector('.form-note');
@@ -235,6 +233,7 @@
   }
 
   function init() {
+    ensureStyles();
     ensureNav();
     ensureFooter();
     normalizeDocButtons();
