@@ -1,37 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <!-- Градиент огня -->
-    <linearGradient id="fire" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#7a0000"/>
-      <stop offset="20%" stop-color="#c00000"/>
-      <stop offset="45%" stop-color="#ff2a00"/>
-      <stop offset="70%" stop-color="#ff7a00"/>
-      <stop offset="100%" stop-color="#ffd54a"/>
-    </linearGradient>
-
-    <!-- Свечение -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-
-  <!-- Черный фон -->
-  <rect width="64" height="64" rx="12" fill="#000000"/>
-
-  <!-- Буква -->
-  <text
-      x="32"
-      y="49"
-      text-anchor="middle"
-      font-family="Arial Black, Segoe UI Black, sans-serif"
-      font-size="46"
-      font-weight="900"
-      fill="url(#fire)"
-      filter="url(#glow)">
-    Э
-  </text>
+  <rect width="64" height="64" rx="10" fill="#1a365d"/>
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round" transform="translate(32,32) scale(0.72)">
+    <g transform="translate(-18,0)">
+      <polygon points="0,-20 17.3,-10 17.3,10 0,20 -17.3,10 -17.3,-10" stroke="#ffffff" stroke-width="3.5"/>
+      <polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" stroke="#ffffff" stroke-width="2.5"/>
+    </g>
+    <g transform="translate(18,0)">
+      <polygon points="0,-20 17.3,-10 17.3,10 0,20 -17.3,10 -17.3,-10" stroke="#E87722" stroke-width="3.5"/>
+      <polygon points="0,-11 9.5,-5.5 9.5,5.5 0,11 -9.5,5.5 -9.5,-5.5" stroke="#E87722" stroke-width="2.5"/>
+    </g>
+  </g>
 </svg>
