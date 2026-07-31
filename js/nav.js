@@ -46,7 +46,6 @@
       '<a href="/raschet.html">Расчёт</a>' +
       '<a href="/#contacts">Контакты</a>';
 
-    // Всегда обновляем мессенджеры (чтобы подхватывать новые иконки)
     var messengers = header.querySelector('.header-messengers');
     if (messengers) messengers.remove();
     messengers = document.createElement('div');
@@ -65,18 +64,26 @@
           '<path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>' +
         '</svg>' +
       '</a>' +
-      /* Max — толстое кольцо как в официальном логотипе */
+      /* Max — открытое кольцо как официальный логотип */
       '<a class="msg-btn msg-max" href="https://max.ru/u/f9LHodD0cOK1_MzS_d0c5a3nP4p3wlhHK73nirp7wU3DQbRRzM8P8lkkhII" target="_blank" rel="noopener noreferrer" title="Max" aria-label="Max">' +
-        '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">' +
+        '<svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true">' +
           '<defs>' +
-            '<linearGradient id="maxGrad" x1="0%" y1="0%" x2="100%" y2="100%">' +
-              '<stop offset="0%" stop-color="#4fc3f7"/>' +
-              '<stop offset="45%" stop-color="#7c4dff"/>' +
-              '<stop offset="100%" stop-color="#e040fb"/>' +
+            '<linearGradient id="maxGrad" x1="8%" y1="85%" x2="92%" y2="15%">' +
+              '<stop offset="0%" stop-color="#5ee7ff"/>' +
+              '<stop offset="35%" stop-color="#6b8cff"/>' +
+              '<stop offset="70%" stop-color="#a855f7"/>' +
+              '<stop offset="100%" stop-color="#ec4899"/>' +
             '</linearGradient>' +
           '</defs>' +
-          /* Внешний круг + внутреннее отверстие (толстое кольцо ~35% радиуса) */
-          '<path fill="url(#maxGrad)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 5.2c2.65 0 4.8 2.15 4.8 4.8s-2.15 4.8-4.8 4.8-4.8-2.15-4.8-4.8 2.15-4.8 4.8-4.8z"/>' +
+          /* Толстое открытое кольцо (форма как у логотипа Max) */
+          '<path fill="url(#maxGrad)" fill-rule="evenodd" d="' +
+            'M24 4c11.05 0 20 8.95 20 20 0 7.5-4.15 14.05-10.25 17.35' +
+            'c-0.55 0.3-1.2 0.15-1.55-0.35-0.3-0.45-0.2-1.05 0.2-1.4' +
+            'C37.3 36.3 40.5 30.5 40.5 24c0-9.1-7.4-16.5-16.5-16.5S7.5 14.9 7.5 24' +
+            'c0 6.5 3.75 12.15 9.2 14.85 0.5 0.25 0.7 0.85 0.45 1.35' +
+            'c-0.25 0.5-0.85 0.7-1.35 0.45C9.15 37.4 4 30.4 4 24 4 12.95 12.95 4 24 4z' +
+            'M24 14c5.52 0 10 4.48 10 10s-4.48 10-10 10-10-4.48-10-10 4.48-10 10-10z' +
+          '"/>' +
         '</svg>' +
       '</a>';
     var phoneEl = header.querySelector('.header-phone');
