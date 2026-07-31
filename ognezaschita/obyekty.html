@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Реализованные объекты — огнезащита ЭФФА и Blank | СПК ЭФФА</title>
-  <meta name="description" content="Объекты с применением огнезащитных материалов ЭФФА и антикоррозионных Blank: СИБУР, Сызранский НПЗ, аэропорт Толмачёво, Быстринский ГОК, Тольяттиазот и другие.">
-  <meta name="keywords" content="объекты ЭФФА, референсы огнезащита, СИБУР, НПЗ, аэропорт, ГОК, СПК ЭФФА">
+  <title>Реализованные объекты — огнезащита ЭФФА и АКЗ Blank | СПК ЭФФА</title>
+  <meta name="description" content="Референс-лист объектов с огнезащитой ЭФФА и антикоррозией Blank: СИБУР 15 000 м², ЦУМ Казань 11 700 м², Полюс, НПЗ, ГОКи, аэропорты. География поставок по России.">
+  <meta name="keywords" content="объекты ЭФФА, референс огнезащита, СИБУР огнезащита, Blank объекты, ГОК, НПЗ, аэропорт Толмачёво, Платинум Арена, СПК ЭФФА">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://spk-effa.ru/ognezaschita/obyekty.html">
-
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="СПК ЭФФА">
   <meta property="og:url" content="https://spk-effa.ru/ognezaschita/obyekty.html">
-  <meta property="og:title" content="Реализованные объекты — ЭФФА и Blank">
-  <meta property="og:description" content="СИБУР, НПЗ, аэропорты, ГОКи, ТЭЦ — объекты с применением материалов ЭФФА и Blank.">
+  <meta property="og:title" content="Реализованные объекты ЭФФА и Blank">
+  <meta property="og:description" content="СИБУР, Полюс, НПЗ, ГОКи, аэропорты — объекты с материалами ЭФФА и Blank по всей России.">
   <meta property="og:image" content="https://spk-effa.ru/favicon.png">
-
   <link rel="icon" href="/favicon.png" sizes="any">
   <meta name="theme-color" content="#1a365d">
   <link rel="stylesheet" href="../css/style.css">
@@ -28,19 +25,53 @@
     {"@type":"ListItem","position":3,"name":"Реализованные объекты","item":"https://spk-effa.ru/ognezaschita/obyekty.html"}
   ]}
   </script>
-
   <style>
-    .objects-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.95rem; }
-    .objects-table th, .objects-table td { border: 1px solid var(--color-border); padding: 12px 14px; text-align: left; vertical-align: top; }
+    .obj-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+    .obj-tab {
+      padding: 10px 18px; border-radius: 8px; border: 1px solid var(--color-border);
+      background: #fff; color: var(--color-primary); font-weight: 600; font-size: 0.92rem;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .obj-tab:hover { border-color: var(--color-accent); }
+    .obj-tab.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+    .obj-panel { display: none; }
+    .obj-panel.active { display: block; }
+    .objects-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 0.92rem; }
+    .objects-table th, .objects-table td { border: 1px solid var(--color-border); padding: 11px 13px; text-align: left; vertical-align: top; }
     .objects-table th { background: var(--color-bg); color: var(--color-primary); font-weight: 600; }
     .objects-table tr:nth-child(even) { background: #fafbfc; }
+    .objects-table .area { white-space: nowrap; font-weight: 600; color: var(--color-accent); }
+    .region-map {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px; margin: 20px 0 32px;
+    }
+    .region-chip {
+      background: #fff; border: 1px solid var(--color-border); border-radius: 8px;
+      padding: 12px 14px; font-size: 0.88rem; text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .region-chip strong { display: block; color: var(--color-primary); margin-bottom: 2px; font-size: 0.95rem; }
+    .section-title {
+      color: var(--color-primary); font-size: 1.35rem; margin: 8px 0 6px;
+      padding-bottom: 8px; border-bottom: 2px solid var(--color-accent);
+    }
+    .section-lead { color: var(--color-text-light); font-size: 0.95rem; margin-bottom: 16px; }
+    .highlight-box {
+      background: linear-gradient(135deg, #f0f7ff 0%, #fff8f0 100%);
+      border: 1px solid var(--color-border); border-radius: 10px;
+      padding: 18px 20px; margin: 0 0 28px; font-size: 0.95rem;
+    }
+    .highlight-box strong { color: var(--color-primary); }
+    @media (max-width: 640px) {
+      .objects-table { font-size: 0.85rem; }
+      .objects-table th, .objects-table td { padding: 8px 10px; }
+    }
   </style>
 </head>
 <body>
-
   <header class="header">
     <div class="container header-inner">
-      <a href="../index.html" class="logo">СПК ЭФФА</a>
+      <a href="/" class="logo">СПК ЭФФА</a>
       <nav class="nav"></nav>
       <a href="tel:+79829059348" class="header-phone">+7 (982) 905-93-48</a>
     </div>
@@ -48,62 +79,198 @@
 
   <section class="product-hero">
     <div class="container">
-      <div class="breadcrumb"><a href="../index.html">Главная</a> / <a href="index.html">Огнезащита</a> / Объекты</div>
+      <div class="breadcrumb"><a href="/">Главная</a> / <a href="index.html">Огнезащита</a> / Объекты</div>
       <h1>Реализованные объекты</h1>
-      <p>Материалы ЭФФА и Blank на промышленных, энергетических и инфраструктурных объектах России</p>
+      <p>Огнезащита ЭФФА и антикоррозия Blank на промышленных, энергетических и инфраструктурных объектах России</p>
     </div>
   </section>
 
   <section class="product-content">
-    <div class="container" style="max-width: 900px;">
+    <div class="container" style="max-width: 960px;">
 
-      <p style="margin-bottom: 28px;">Ниже — объекты, на которых применялись огнезащитные составы ТМ ЭФФА и/или антикоррозионные материалы ТМ Blank. Список подтверждает опыт применения в реальных условиях эксплуатации.</p>
+      <div class="highlight-box">
+        Материалы ТМ <strong>ЭФФА</strong> и <strong>Blank</strong> применяются на объектах нефтехимии, ГОКов, ТЭЦ, аэропортов, спортивных и производственных комплексов.
+        Ниже — подтверждённый референс-лист с разбивкой по брендам.
+      </div>
 
-      <table class="objects-table">
-        <tr>
-          <th>Объект</th>
-          <th>Применённые материалы</th>
-        </tr>
-        <tr><td>ФОК «Юбилейный», г. Новомосковск</td><td>Blank Universal + ЭФФА ЭП-150 + Blank Finish</td></tr>
-        <tr><td>АО «Полюс Магадан», ЗИФ «Надежный»</td><td>Blank Universal + ЭФФА ЭП-150</td></tr>
-        <tr><td>АО «Полюс Логистика»</td><td>Blank Universal + ЭФФА ЭП-150</td></tr>
-        <tr><td>ПАО «Нижнекамскнефтехим» / СИБУР</td><td>ЭФФА-01 атмосферостойкий</td></tr>
-        <tr><td>ООО «ЗЭОТЭК»</td><td>Blank Universal + Blank Finish</td></tr>
-        <tr><td>АО «Сызранский НПЗ»</td><td>ЭФФА ЭП-150</td></tr>
-        <tr><td>ООО «Полипласт» (произв. РПП, 132 000 т/год)</td><td>Blank Universal + ЭФФА ЭП-150 + Blank Finish</td></tr>
-        <tr><td>ТЭЦ Степное озеро</td><td>ЭФФА-Конструктив + ЭФФА А-101</td></tr>
-        <tr><td>Байкальский битумный терминал (Иркутская обл.)</td><td>ЭФФА-Конструктив</td></tr>
-        <tr><td>Тюменьэнерго, г. Сургут</td><td>Состав для кабельных линий</td></tr>
-        <tr><td>Быстринский ГОК, Забайкальский край</td><td>ЭФФА-Конструктив</td></tr>
-        <tr><td>АО «Фармасинтез», г. Тюмень</td><td>ЭФФА-01 + ЭФФА-Конструктив</td></tr>
-        <tr><td>Кемеровская ТЭЦ</td><td>Состав для кабельных линий</td></tr>
-        <tr><td>Бийская ТЭЦ</td><td>ЭФФА-01</td></tr>
-        <tr><td>Аэропорт Толмачёво, г. Новосибирск</td><td>ЭФФА-01</td></tr>
-        <tr><td>СК «Платинум Арена»</td><td>ЭФФА-01</td></tr>
-        <tr><td>ТЦ «БЕЛАЗ», Кемеровская обл.</td><td>ЭФФА-01</td></tr>
-        <tr><td>Авиационный завод, г. Улан-Удэ</td><td>ЭФФА-01</td></tr>
-        <tr><td>ПАО «ТОЛЬЯТТИАЗОТ»</td><td>Blank + Blank Tank</td></tr>
-        <tr><td>«Пруд-регулятор»</td><td>Blank Tank</td></tr>
-      </table>
+      <h2 class="section-title">География поставок</h2>
+      <p class="section-lead">От Камчатки до Крыма, от Якутии до Казахстана</p>
+      <div class="region-map" aria-label="Регионы поставок">
+        <div class="region-chip"><strong>Алтайский край</strong>ТЭЦ, ДОК, пивзавод</div>
+        <div class="region-chip"><strong>Кемеровская обл.</strong>НПЗ, шахта, БЕЛАЗ</div>
+        <div class="region-chip"><strong>Забайкалье</strong>ГОК, ППГХО</div>
+        <div class="region-chip"><strong>Иркутская обл.</strong>ИНК, битумный терминал</div>
+        <div class="region-chip"><strong>Красноярский край</strong>НПЗ, Платинум Арена</div>
+        <div class="region-chip"><strong>Татарстан</strong>СИБУР, ЦУМ, аэропорт</div>
+        <div class="region-chip"><strong>Самарская обл.</strong>Тольяттиазот, НПЗ</div>
+        <div class="region-chip"><strong>Магадан</strong>Полюс</div>
+        <div class="region-chip"><strong>Якутия</strong>РНГ, месторождения</div>
+        <div class="region-chip"><strong>Камчатка</strong>спорткомплекс</div>
+        <div class="region-chip"><strong>Крым</strong>нефтебаза</div>
+        <div class="region-chip"><strong>Казахстан</strong>QARMET</div>
+      </div>
 
-      <p style="margin-top: 24px; color: var(--color-text-light); font-size: 0.95rem;">СПК ЭФФА — официальный представитель производителей. Материалы поставляются с полным комплектом сертификатов и протоколов испытаний.</p>
+      <div class="obj-tabs" role="tablist">
+        <button type="button" class="obj-tab active" data-tab="effa" role="tab">ЭФФА (огнезащита)</button>
+        <button type="button" class="obj-tab" data-tab="a01" role="tab">ЭФФА А-01 (атмосфера)</button>
+        <button type="button" class="obj-tab" data-tab="blank" role="tab">Blank (АКЗ)</button>
+        <button type="button" class="obj-tab" data-tab="system" role="tab">Системы АКЗ + ОГЗ</button>
+      </div>
+
+      <!-- ЭФФА -->
+      <div id="panel-effa" class="obj-panel active" role="tabpanel">
+        <h2 class="section-title">Объекты с огнезащитой ЭФФА</h2>
+        <p class="section-lead">Конструктивные системы, ЭФФА-01, ЭП-150, составы для кабелей</p>
+        <div class="table-wrap">
+          <table class="objects-table">
+            <thead>
+              <tr><th>Объект</th><th>Регион</th><th>Материал</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Быстринский ГОК</td><td>Забайкальский край</td><td>ЭФФА-Конструктив</td></tr>
+              <tr><td>Павловский ДОК</td><td>Алтайский край</td><td>ЭФФА А-01, ЭФФА-01</td></tr>
+              <tr><td>ТЭЦ Степное озеро</td><td>Алтайский край</td><td>ЭФФА-Конструктив, А-101, ЭП-150</td></tr>
+              <tr><td>Байкальский битумный терминал</td><td>Иркутская обл.</td><td>ЭФФА-Конструктив</td></tr>
+              <tr><td>Комбикормовый завод</td><td>Омская обл.</td><td>ЭФФА-Конструктив</td></tr>
+              <tr><td>Ачинский НПЗ / Ванкорнефть</td><td>Красноярский край</td><td>ЭФФА ЭП-150</td></tr>
+              <tr><td>АО «ИНК», Ярактинское месторождение</td><td>Иркутская обл.</td><td>ЭП-150, ЭП-150К</td></tr>
+              <tr><td>АО «РНГ», месторождение у г. Мирный</td><td>Саха (Якутия)</td><td>ЭФФА-01, ЭП-150</td></tr>
+              <tr><td>Бочкарёвский пивоваренный завод</td><td>Алтайский край</td><td>ЭФФА ЭП-150</td></tr>
+              <tr><td>Кожевенный завод</td><td>г. Заринск</td><td>ЭФФА-01</td></tr>
+              <tr><td>Международный терминал аэропорта Толмачёво</td><td>г. Новосибирск</td><td>ЭФФА-01</td></tr>
+              <tr><td>СК «Платинум Арена»</td><td>г. Красноярск</td><td>ЭФФА-01</td></tr>
+              <tr><td>Маслоэкстракционный завод</td><td>г. Барнаул</td><td>ЭФФА-01</td></tr>
+              <tr><td>Авиационный завод</td><td>г. Улан-Удэ</td><td>ЭФФА-01</td></tr>
+              <tr><td>Завод «Фармасинтез»</td><td>г. Тюмень</td><td>ЭФФА-01</td></tr>
+              <tr><td>Тюменьэнерго</td><td>г. Сургут</td><td>Состав для кабельных линий</td></tr>
+              <tr><td>УГМК, Гайский ГОК, Ледовая арена</td><td>г. Гай</td><td>ЭФФА</td></tr>
+              <tr><td>ЕВРАЗ</td><td>г. Новокузнецк</td><td>ЭФФА</td></tr>
+              <tr><td>Сервисный центр БЕЛАЗ</td><td>Кемеровская обл.</td><td>ЭФФА-01</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- А-01 атмосфера -->
+      <div id="panel-a01" class="obj-panel" role="tabpanel">
+        <h2 class="section-title">ЭФФА А-01 — атмосферостойкая огнезащита</h2>
+        <p class="section-lead">Объекты открытой атмосферы и конструкций на открытом воздухе. Площади по данным производителя.</p>
+        <div class="table-wrap">
+          <table class="objects-table">
+            <thead>
+              <tr><th>Объект</th><th>Площадь</th><th>Год</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>СИБУР, производственные эстакады</td><td class="area">15 000 м²</td><td>2024</td></tr>
+              <tr><td>«ЦУМ», г. Казань</td><td class="area">11 700 м²</td><td>2025</td></tr>
+              <tr><td>ЗАО «Смарт», производственный цех, г. Златоуст</td><td class="area">8 000 м²</td><td>2025</td></tr>
+              <tr><td>Бассейн, г. Барнаул, ул. Ленина, 122</td><td class="area">4 750 м²</td><td>2023</td></tr>
+              <tr><td>Спортивный зал единоборств, г. Елизово (Камчатка)</td><td class="area">4 600 м²</td><td>2020–2021</td></tr>
+              <tr><td>Шайбулакский племенной завод, Чувашия</td><td class="area">4 000 м²</td><td>2022–2023</td></tr>
+              <tr><td>ОАО «Кучуксульфат», строительство ТЭЦ (открытые конструкции)</td><td class="area">3 000 м²</td><td>2019</td></tr>
+              <tr><td>ОАО «УГМК» Гайский ГОК, насосные станции №1–3</td><td class="area">2 000 м²</td><td>2019–2020</td></tr>
+              <tr><td>ООО «Павловский ДОК»</td><td class="area">1 500 м²</td><td>2019–2020</td></tr>
+              <tr><td>Оранжерея, г. Новосибирск</td><td class="area">1 500 м²</td><td>—</td></tr>
+              <tr><td>Рускомагро, комбикормовый завод, Омская обл.</td><td class="area">1 500 м²</td><td>2019–2021</td></tr>
+              <tr><td>ГК «Мангазея», месторождение «Наседкино»</td><td class="area">1 000 м²</td><td>2024</td></tr>
+              <tr><td>ПАО «ППГХО», г. Краснокаменск</td><td class="area">800 м²</td><td>2020</td></tr>
+              <tr><td>Ростверк ПС 35/6,3/6 кВ «Угольная Северная», г. Белово</td><td class="area">500 м²</td><td>2022</td></tr>
+              <tr><td>Казанский аэропорт им. Г. Тукая</td><td class="area">500 м²</td><td>—</td></tr>
+              <tr><td>«Платинум Арена», г. Красноярск</td><td class="area">—</td><td>2018</td></tr>
+              <tr><td>ТЭЦ-3, г. Казань</td><td class="area">100 м²</td><td>—</td></tr>
+              <tr><td>Казанский государственный пороховой завод</td><td class="area">—</td><td>2025</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><a href="effa-a-01.html" style="color:var(--color-accent);font-weight:600;">Подробнее о составе ЭФФА А-01 →</a></p>
+      </div>
+
+      <!-- Blank -->
+      <div id="panel-blank" class="obj-panel" role="tabpanel">
+        <h2 class="section-title">Объекты с АКЗ Blank</h2>
+        <p class="section-lead">Антикоррозионные покрытия на промышленных объектах. Полный список — также на <a href="../blank/obyekty.html">странице объектов Blank</a>.</p>
+        <div class="table-wrap">
+          <table class="objects-table">
+            <thead>
+              <tr><th>Объект</th><th>Материалы</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Яйский НПЗ, Кемеровская обл.</td><td>Blank Universal + Blank Finish</td></tr>
+              <tr><td>АО «Полюс Магадан», ЗИФ «Надежный»</td><td>Blank Universal + ЭФФА ЭП-150</td></tr>
+              <tr><td>АО «Полюс Логистика», ангар МТР</td><td>Blank Universal + ЭФФА ЭП-150</td></tr>
+              <tr><td>ООО «Ангарский азотно-туковый завод»</td><td>Blank Universal + ЭФФА ЭП-150</td></tr>
+              <tr><td>ФОК «Юбилейный», г. Новомосковск</td><td>Blank Universal + ЭП-150 + Blank Finish</td></tr>
+              <tr><td>Шахта «Листвяжная»</td><td>Blank Universal</td></tr>
+              <tr><td>ПАО «Нижнекамскнефтехим» / СИБУР</td><td>Blank Universal, Blank Finish, Blank Tank</td></tr>
+              <tr><td>ООО «ЗЭОТЭК», ёмкостное оборудование</td><td>Blank Universal, Finish, HP</td></tr>
+              <tr><td>ПАО «ТОЛЬЯТТИАЗОТ»</td><td>Blank Tank</td></tr>
+              <tr><td>ООО «Полипласт», узел фасовки РПП</td><td>Blank Universal + Blank Finish</td></tr>
+              <tr><td>Металлургический комбинат QARMET (Казахстан)</td><td>Blank Universal + ЭП-150 + Finish</td></tr>
+              <tr><td>Нефтебаза пгт Гвардейское, Крым (РВС-1000/2000)</td><td>Blank Universal + Blank Finish RAL 9003</td></tr>
+              <tr><td>ООО «ЗЭОТЭК», РГС для «Роснефти»</td><td>Blank Universal + Blank Finish</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.9rem;color:var(--color-text-light);">Клиенты: Роснефть, Башнефть, Полюс, ИНК, Азот, Транснефть, Илим, РЖД и др.</p>
+      </div>
+
+      <!-- Systems -->
+      <div id="panel-system" class="obj-panel" role="tabpanel">
+        <h2 class="section-title">Системы АКЗ + ОГЗ</h2>
+        <p class="section-lead">Комплексная защита: антикоррозия Blank + огнезащита ЭФФА</p>
+        <div class="highlight-box">
+          <strong>Типовая схема:</strong><br>
+          Металл → <strong>Blank Universal</strong> → <strong>ЭФФА ЭП-150</strong> → <strong>Blank Finish</strong><br><br>
+          Пределы огнестойкости R45–R120. Среда C4, срок службы ≥ 25 лет.
+        </div>
+        <div class="table-wrap">
+          <table class="objects-table">
+            <thead>
+              <tr><th>Объект</th><th>Система</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>АО «Полюс Магадан»</td><td>Blank Universal + ЭФФА ЭП-150</td></tr>
+              <tr><td>АО «Полюс Логистика»</td><td>Blank Universal + ЭФФА ЭП-150</td></tr>
+              <tr><td>ФОК «Юбилейный»</td><td>Blank Universal + ЭП-150 + Blank Finish</td></tr>
+              <tr><td>Ангарский азотно-туковый завод</td><td>Blank Universal + ЭФФА ЭП-150</td></tr>
+              <tr><td>QARMET, кузнечно-прессовый цех</td><td>Blank Universal + ЭП-150 + Blank Finish</td></tr>
+              <tr><td>ООО «Полипласт»</td><td>Blank Universal + ЭП-150 + Blank Finish</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><a href="sistemy-akz-ogz.html" style="color:var(--color-accent);font-weight:600;">Подробные системы R45–R120 и расходы →</a></p>
+      </div>
+
+      <p style="margin-top: 32px; color: var(--color-text-light); font-size: 0.95rem;">
+        СПК ЭФФА — официальный представитель производителей ООО «ЭФФА» и ООО «Колоридо» (Blank).
+        Материалы поставляются с полным комплектом сертификатов и протоколов испытаний.
+      </p>
 
       <a href="index.html" class="back-link">← Вернуться к разделу Огнезащита</a>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="logo">СПК ЭФФА</div>
-        <p>Официальный представитель производителей ТМ Blank, ЭФФА и Veksa.</p>
-      </div>
-      <div class="footer-right">
-        <p>© 2024–2026 ООО «СПК ЭФФА». Все права защищены.</p>
-      </div>
-    </div>
-  </footer>
-
+  <footer class="footer"></footer>
   <script src="../js/nav.js"></script>
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('.obj-tab');
+      var panels = {
+        effa: document.getElementById('panel-effa'),
+        a01: document.getElementById('panel-a01'),
+        blank: document.getElementById('panel-blank'),
+        system: document.getElementById('panel-system')
+      };
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          Object.keys(panels).forEach(function (k) {
+            panels[k].classList.toggle('active', k === tab.getAttribute('data-tab'));
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
