@@ -33,9 +33,7 @@
     if (!nav) {
       nav = document.createElement('nav');
       nav.className = 'nav';
-      var phone = header.querySelector('.header-phone');
-      if (phone) header.insertBefore(nav, phone);
-      else header.appendChild(nav);
+      header.appendChild(nav);
     }
 
     nav.innerHTML =
@@ -46,45 +44,49 @@
       '<a href="/raschet.html">Расчёт</a>' +
       '<a href="/#contacts">Контакты</a>';
 
-    var messengers = header.querySelector('.header-messengers');
-    if (messengers) messengers.remove();
-    messengers = document.createElement('div');
-    messengers.className = 'header-messengers';
-    messengers.setAttribute('aria-label', 'Мессенджеры');
-    messengers.innerHTML =
-      /* WhatsApp */
-      '<a class="msg-btn msg-wa" href="https://wa.me/' + PHONE + '" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">' +
-        '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">' +
-          '<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.76.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zM8.53 7.33c-.16 0-.43.06-.66.31-.24.26-.9.88-.9 2.13 0 1.25.92 2.48 1.05 2.65.12.17 1.78 2.83 4.41 3.86 2.2.87 2.65.7 3.13.66.48-.05 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.1-.26-.17-.54-.3-.28-.14-1.67-.82-1.93-.92-.26-.1-.45-.14-.64.15-.19.28-.74.92-.9 1.11-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.17.19-.28.28-.47.1-.19.05-.36-.02-.5-.08-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48z"/>' +
-        '</svg>' +
-      '</a>' +
-      /* Telegram */
-      '<a class="msg-btn msg-tg" href="https://t.me/kappam6abless" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram">' +
-        '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">' +
-          '<path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>' +
-        '</svg>' +
-      '</a>' +
-      /* Max — речевой пузырь (speech bubble) */
-      '<a class="msg-btn msg-max" href="https://max.ru/u/f9LHodD0cOK1_MzS_d0c5a3nP4p3wlhHK73nirp7wU3DQbRRzM8P8lkkhII" target="_blank" rel="noopener noreferrer" title="Max" aria-label="Max">' +
-        '<svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true">' +
-          '<defs>' +
-            '<linearGradient id="maxGrad" x1="10%" y1="90%" x2="90%" y2="10%">' +
-              '<stop offset="0%" stop-color="#5ee7ff"/>' +
-              '<stop offset="30%" stop-color="#6b8cff"/>' +
-              '<stop offset="65%" stop-color="#a855f7"/>' +
-              '<stop offset="100%" stop-color="#ec4899"/>' +
-            '</linearGradient>' +
-          '</defs>' +
-          /* Толстый речевой пузырь: внешний контур + внутреннее отверстие */
-          '<path fill="url(#maxGrad)" fill-rule="evenodd" d="' +
-            'M24 3C13.5 3 5 11.1 5 21.2c0 5.6 2.6 10.6 6.7 14l-2.4 7.3c-0.3 0.9 0.6 1.7 1.4 1.3l8.1-3.5c1.7 0.5 3.4 0.7 5.2 0.7 10.5 0 19-8.1 19-18.2S34.5 3 24 3z' +
-            'M24 12.5c6.3 0 11.5 4.9 11.5 10.9S30.3 34.3 24 34.3c-1.5 0-2.9-0.3-4.2-0.8l-0.5-0.2-4.1 1.8 1.2-3.6-0.3-0.4C13.8 29 12.5 25.7 12.5 22.4c0-6 5.2-10.9 11.5-10.9z' +
-          '"/>' +
-        '</svg>' +
-      '</a>';
-    var phoneEl = header.querySelector('.header-phone');
-    if (phoneEl) header.insertBefore(messengers, phoneEl);
-    else header.appendChild(messengers);
+    // Удаляем старые блоки
+    var oldMsg = header.querySelector('.header-messengers');
+    if (oldMsg) oldMsg.remove();
+    var oldPhone = header.querySelector('.header-phone');
+    if (oldPhone) oldPhone.remove();
+    var oldContacts = header.querySelector('.header-contacts');
+    if (oldContacts) oldContacts.remove();
+
+    // Блок: иконки сверху, телефон снизу
+    var contacts = document.createElement('div');
+    contacts.className = 'header-contacts';
+    contacts.innerHTML =
+      '<div class="header-messengers" aria-label="Мессенджеры">' +
+        '<a class="msg-btn msg-wa" href="https://wa.me/' + PHONE + '" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">' +
+          '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">' +
+            '<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.76.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zM8.53 7.33c-.16 0-.43.06-.66.31-.24.26-.9.88-.9 2.13 0 1.25.92 2.48 1.05 2.65.12.17 1.78 2.83 4.41 3.86 2.2.87 2.65.7 3.13.66.48-.05 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.1-.26-.17-.54-.3-.28-.14-1.67-.82-1.93-.92-.26-.1-.45-.14-.64.15-.19.28-.74.92-.9 1.11-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.17.19-.28.28-.47.1-.19.05-.36-.02-.5-.08-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48z"/>' +
+          '</svg>' +
+        '</a>' +
+        '<a class="msg-btn msg-tg" href="https://t.me/kappam6abless" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram">' +
+          '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">' +
+            '<path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>' +
+          '</svg>' +
+        '</a>' +
+        '<a class="msg-btn msg-max" href="https://max.ru/u/f9LHodD0cOK1_MzS_d0c5a3nP4p3wlhHK73nirp7wU3DQbRRzM8P8lkkhII" target="_blank" rel="noopener noreferrer" title="Max" aria-label="Max">' +
+          '<svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true">' +
+            '<defs>' +
+              '<linearGradient id="maxGrad" x1="10%" y1="90%" x2="90%" y2="10%">' +
+                '<stop offset="0%" stop-color="#5ee7ff"/>' +
+                '<stop offset="30%" stop-color="#6b8cff"/>' +
+                '<stop offset="65%" stop-color="#a855f7"/>' +
+                '<stop offset="100%" stop-color="#ec4899"/>' +
+              '</linearGradient>' +
+            '</defs>' +
+            '<path fill="url(#maxGrad)" fill-rule="evenodd" d="' +
+              'M24 3C13.5 3 5 11.1 5 21.2c0 5.6 2.6 10.6 6.7 14l-2.4 7.3c-0.3 0.9 0.6 1.7 1.4 1.3l8.1-3.5c1.7 0.5 3.4 0.7 5.2 0.7 10.5 0 19-8.1 19-18.2S34.5 3 24 3z' +
+              'M24 12.5c6.3 0 11.5 4.9 11.5 10.9S30.3 34.3 24 34.3c-1.5 0-2.9-0.3-4.2-0.8l-0.5-0.2-4.1 1.8 1.2-3.6-0.3-0.4C13.8 29 12.5 25.7 12.5 22.4c0-6 5.2-10.9 11.5-10.9z' +
+            '"/>' +
+          '</svg>' +
+        '</a>' +
+      '</div>' +
+      '<a class="header-phone" href="tel:+' + PHONE + '">' + PHONE_DISPLAY + '</a>';
+
+    header.appendChild(contacts);
 
     var toggle = header.querySelector('.nav-toggle');
     if (!toggle) {
