@@ -46,41 +46,42 @@
       '<a href="/raschet.html">Расчёт</a>' +
       '<a href="/#contacts">Контакты</a>';
 
+    // Всегда обновляем мессенджеры (чтобы подхватывать новые иконки)
     var messengers = header.querySelector('.header-messengers');
-    if (!messengers) {
-      messengers = document.createElement('div');
-      messengers.className = 'header-messengers';
-      messengers.setAttribute('aria-label', 'Мессенджеры');
-      messengers.innerHTML =
-        /* WhatsApp */
-        '<a class="msg-btn msg-wa" href="https://wa.me/' + PHONE + '" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">' +
-          '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">' +
-            '<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.76.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zM8.53 7.33c-.16 0-.43.06-.66.31-.24.26-.9.88-.9 2.13 0 1.25.92 2.48 1.05 2.65.12.17 1.78 2.83 4.41 3.86 2.2.87 2.65.7 3.13.66.48-.05 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.1-.26-.17-.54-.3-.28-.14-1.67-.82-1.93-.92-.26-.1-.45-.14-.64.15-.19.28-.74.92-.9 1.11-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.17.19-.28.28-.47.1-.19.05-.36-.02-.5-.08-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48z"/>' +
-          '</svg>' +
-        '</a>' +
-        /* Telegram */
-        '<a class="msg-btn msg-tg" href="https://t.me/kappam6abless" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram">' +
-          '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">' +
-            '<path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>' +
-          '</svg>' +
-        '</a>' +
-        /* Max — кольцо толще на 15% */
-        '<a class="msg-btn msg-max" href="https://max.ru/u/f9LHodD0cOK1_MzS_d0c5a3nP4p3wlhHK73nirp7wU3DQbRRzM8P8lkkhII" target="_blank" rel="noopener noreferrer" title="Max" aria-label="Max">' +
-          '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">' +
-            '<defs>' +
-              '<linearGradient id="maxGrad" x1="0%" y1="0%" x2="100%" y2="100%">' +
-                '<stop offset="0%" stop-color="#4fc3f7"/>' +
-                '<stop offset="50%" stop-color="#7c4dff"/>' +
-                '<stop offset="100%" stop-color="#e040fb"/>' +
-              '</linearGradient>' +
-            '</defs>' +
-            '<path fill="url(#maxGrad)" d="M12 2.8c-5.1 0-9.2 4.1-9.2 9.2 0 1.85.55 3.55 1.5 5l-1.2 4.2 4.4-1.15c1.3.75 2.8 1.15 4.5 1.15 5.1 0 9.2-4.1 9.2-9.2S17.1 2.8 12 2.8zm0 15.5c-1.2 0-2.35-.3-3.35-.85l-.35-.2-2.55.7.7-2.5-.2-.35c-.7-1.15-1.1-2.5-1.1-3.9 0-4.05 3.3-7.35 7.35-7.35s7.35 3.3 7.35 7.35-3.3 7.35-7.35 7.35z"/>' +
-          '</svg>' +
-        '</a>';
-      var phoneEl = header.querySelector('.header-phone');
-      if (phoneEl) header.insertBefore(messengers, phoneEl);
-      else header.appendChild(messengers);
-    }
+    if (messengers) messengers.remove();
+    messengers = document.createElement('div');
+    messengers.className = 'header-messengers';
+    messengers.setAttribute('aria-label', 'Мессенджеры');
+    messengers.innerHTML =
+      /* WhatsApp */
+      '<a class="msg-btn msg-wa" href="https://wa.me/' + PHONE + '" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">' +
+        '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">' +
+          '<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.76.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zM8.53 7.33c-.16 0-.43.06-.66.31-.24.26-.9.88-.9 2.13 0 1.25.92 2.48 1.05 2.65.12.17 1.78 2.83 4.41 3.86 2.2.87 2.65.7 3.13.66.48-.05 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.1-.26-.17-.54-.3-.28-.14-1.67-.82-1.93-.92-.26-.1-.45-.14-.64.15-.19.28-.74.92-.9 1.11-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.17.19-.28.28-.47.1-.19.05-.36-.02-.5-.08-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48z"/>' +
+        '</svg>' +
+      '</a>' +
+      /* Telegram */
+      '<a class="msg-btn msg-tg" href="https://t.me/kappam6abless" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram">' +
+        '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">' +
+          '<path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>' +
+        '</svg>' +
+      '</a>' +
+      /* Max — толстое кольцо как в официальном логотипе */
+      '<a class="msg-btn msg-max" href="https://max.ru/u/f9LHodD0cOK1_MzS_d0c5a3nP4p3wlhHK73nirp7wU3DQbRRzM8P8lkkhII" target="_blank" rel="noopener noreferrer" title="Max" aria-label="Max">' +
+        '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">' +
+          '<defs>' +
+            '<linearGradient id="maxGrad" x1="0%" y1="0%" x2="100%" y2="100%">' +
+              '<stop offset="0%" stop-color="#4fc3f7"/>' +
+              '<stop offset="45%" stop-color="#7c4dff"/>' +
+              '<stop offset="100%" stop-color="#e040fb"/>' +
+            '</linearGradient>' +
+          '</defs>' +
+          /* Внешний круг + внутреннее отверстие (толстое кольцо ~35% радиуса) */
+          '<path fill="url(#maxGrad)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 5.2c2.65 0 4.8 2.15 4.8 4.8s-2.15 4.8-4.8 4.8-4.8-2.15-4.8-4.8 2.15-4.8 4.8-4.8z"/>' +
+        '</svg>' +
+      '</a>';
+    var phoneEl = header.querySelector('.header-phone');
+    if (phoneEl) header.insertBefore(messengers, phoneEl);
+    else header.appendChild(messengers);
 
     var toggle = header.querySelector('.nav-toggle');
     if (!toggle) {
