@@ -1,4 +1,4 @@
-/* Мессенджеры в шапке — классические читаемые иконки */
+/* Мессенджеры в шапке */
 .header-messengers {
   display: flex;
   align-items: center;
@@ -32,7 +32,15 @@
 
 .msg-wa { background: #25d366; }
 .msg-tg { background: #2aabee; }
-.msg-max { background: #7b61ff; }
+
+/* Max — тёмный фон, чтобы градиентная иконка смотрелась как оригинал */
+.msg-max {
+  background: #1a1a2e;
+}
+.msg-max svg {
+  width: 22px;
+  height: 22px;
+}
 
 .footer-messengers {
   margin-top: 8px;
@@ -85,5 +93,9 @@
   .msg-btn svg {
     width: 18px;
     height: 18px;
+  }
+  .msg-max svg {
+    width: 20px;
+    height: 20px;
   }
 }
