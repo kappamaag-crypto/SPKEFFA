@@ -24,107 +24,74 @@
     .calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
     @media(max-width:600px){.calc-row{grid-template-columns:1fr}}
     .calc-card label{display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;color:#334155}
-    .calc-card input,.calc-card select{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:6px;font-size:1rem}
+    .calc-card input{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:6px;font-size:1rem}
     .calc-result{margin-top:14px;padding:14px;background:#f0f9ff;border-radius:8px;font-weight:700;color:#1a365d;font-size:1.05rem}
     .calc-note{font-size:.8rem;color:#64748b;margin-top:10px}
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Чем отличаются WFT и DFT?", "acceptedAnswer": {"@type": "Answer", "text": "WFT — толщина мокрой плёнки. DFT — сухой. DFT = WFT × (сухой остаток / 100)."}},
+    {"@type": "Question", "name": "Как учитывать потери при нанесении?", "acceptedAnswer": {"@type": "Answer", "text": "Практический расход = теоретический × 100 / (100 − потери%). Безвоздушное 20–30%, пневматическое ~40%."}},
+    {"@type": "Question", "name": "Что такое мёртвый объём по Rz?", "acceptedAnswer": {"@type": "Answer", "text": "Дополнительная толщина на заполнение профиля шероховатости. Примерно Rz × 0,2."}},
+    {"@type": "Question", "name": "Зачем считать точку росы?", "acceptedAnswer": {"@type": "Answer", "text": "Температура поверхности должна быть выше точки росы минимум на 3 °C."}},
+    {"@type": "Question", "name": "Можно ли использовать калькулятор вместо коммерческого расчёта?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Для КП оставьте заявку на расчёт."}}
+  ]
+}
+  </script>
 </head>
 <body>
   <header class="header"><div class="container header-inner">
     <a href="/" class="logo">СПК ЭФФА</a><nav class="nav"></nav>
     <a href="tel:+79829059348" class="header-phone">+7 (982) 905-93-48</a>
   </div></header>
-
   <section class="product-hero"><div class="container">
     <div class="breadcrumb"><a href="/">Главная</a> / Калькуляторы</div>
     <h1>Калькуляторы расчёта ЛКМ</h1>
     <p>Толщина плёнки, сухой остаток, расход, точка росы — ориентировочные инженерные расчёты</p>
   </div></section>
-
   <section class="section"><div class="container" style="max-width:900px">
     <p style="color:var(--color-text-light);margin-bottom:8px">Результаты носят справочный характер. Для коммерческого расчёта по объекту оставьте <a href="raschet.html">заявку</a>.</p>
     <div class="calc-grid">
-
-      <div class="calc-card">
-        <h2>Толщина мокрой плёнки (WFT)</h2>
-        <p class="hint">WFT = DFT ÷ (сухой остаток по объёму / 100)</p>
-        <div class="calc-row">
-          <div><label>Толщина сухой плёнки DFT, мкм</label><input type="number" id="wft_dft" value="100" min="0" step="1"></div>
-          <div><label>Сухой остаток по объёму, %</label><input type="number" id="wft_vs" value="60" min="1" max="100" step="0.1"></div>
-        </div>
-        <div class="calc-result" id="wft_out">—</div>
-      </div>
-
-      <div class="calc-card">
-        <h2>Толщина сухой плёнки (DFT)</h2>
-        <p class="hint">DFT = WFT × (сухой остаток по объёму / 100)</p>
-        <div class="calc-row">
-          <div><label>Толщина мокрой плёнки WFT, мкм</label><input type="number" id="dft_wft" value="167" min="0" step="1"></div>
-          <div><label>Сухой остаток по объёму, %</label><input type="number" id="dft_vs" value="60" min="1" max="100" step="0.1"></div>
-        </div>
-        <div class="calc-result" id="dft_out">—</div>
-      </div>
-
-      <div class="calc-card">
-        <h2>Сухой остаток по объёму</h2>
-        <p class="hint">VS% = (DFT / WFT) × 100</p>
-        <div class="calc-row">
-          <div><label>DFT, мкм</label><input type="number" id="vs_dft" value="100" min="0" step="1"></div>
-          <div><label>WFT, мкм</label><input type="number" id="vs_wft" value="167" min="1" step="1"></div>
-        </div>
-        <div class="calc-result" id="vs_out">—</div>
-      </div>
-
-      <div class="calc-card">
-        <h2>Теоретическая кроющая способность</h2>
-        <p class="hint">м²/л = (VS% / 100) × 1000 / DFT</p>
-        <div class="calc-row">
-          <div><label>Сухой остаток по объёму, %</label><input type="number" id="cov_vs" value="60" min="1" max="100" step="0.1"></div>
-          <div><label>DFT, мкм</label><input type="number" id="cov_dft" value="100" min="1" step="1"></div>
-        </div>
-        <div class="calc-result" id="cov_out">—</div>
-      </div>
-
-      <div class="calc-card">
-        <h2>Расход с учётом потерь</h2>
-        <p class="hint">Практический расход = теоретический × 100 / (100 − потери%)</p>
-        <div class="calc-row">
-          <div><label>DFT, мкм</label><input type="number" id="cons_dft" value="100" min="1" step="1"></div>
-          <div><label>Сухой остаток, %</label><input type="number" id="cons_vs" value="60" min="1" max="100" step="0.1"></div>
-        </div>
-        <div class="calc-row">
-          <div><label>Площадь, м²</label><input type="number" id="cons_area" value="100" min="0.1" step="0.1"></div>
-          <div><label>Потери, %</label><input type="number" id="cons_loss" value="30" min="0" max="90" step="1"></div>
-        </div>
+      <div class="calc-card"><h2>Толщина мокрой плёнки (WFT)</h2><p class="hint">WFT = DFT ÷ (сухой остаток / 100)</p>
+        <div class="calc-row"><div><label>DFT, мкм</label><input type="number" id="wft_dft" value="100"></div><div><label>Сухой остаток, %</label><input type="number" id="wft_vs" value="60"></div></div>
+        <div class="calc-result" id="wft_out">—</div></div>
+      <div class="calc-card"><h2>Толщина сухой плёнки (DFT)</h2><p class="hint">DFT = WFT × (сухой остаток / 100)</p>
+        <div class="calc-row"><div><label>WFT, мкм</label><input type="number" id="dft_wft" value="167"></div><div><label>Сухой остаток, %</label><input type="number" id="dft_vs" value="60"></div></div>
+        <div class="calc-result" id="dft_out">—</div></div>
+      <div class="calc-card"><h2>Сухой остаток по объёму</h2><p class="hint">VS% = (DFT / WFT) × 100</p>
+        <div class="calc-row"><div><label>DFT, мкм</label><input type="number" id="vs_dft" value="100"></div><div><label>WFT, мкм</label><input type="number" id="vs_wft" value="167"></div></div>
+        <div class="calc-result" id="vs_out">—</div></div>
+      <div class="calc-card"><h2>Теоретическая кроющая способность</h2><p class="hint">м²/л = (VS%/100) × 1000 / DFT</p>
+        <div class="calc-row"><div><label>Сухой остаток, %</label><input type="number" id="cov_vs" value="60"></div><div><label>DFT, мкм</label><input type="number" id="cov_dft" value="100"></div></div>
+        <div class="calc-result" id="cov_out">—</div></div>
+      <div class="calc-card"><h2>Расход с учётом потерь</h2><p class="hint">Практический = теоретический × 100 / (100 − потери%)</p>
+        <div class="calc-row"><div><label>DFT, мкм</label><input type="number" id="cons_dft" value="100"></div><div><label>Сухой остаток, %</label><input type="number" id="cons_vs" value="60"></div></div>
+        <div class="calc-row"><div><label>Площадь, м²</label><input type="number" id="cons_area" value="100"></div><div><label>Потери, %</label><input type="number" id="cons_loss" value="30"></div></div>
         <div class="calc-result" id="cons_out">—</div>
-        <p class="calc-note">Ориентир потерь: безвоздушное 20–30%, пневматическое ~40%. Уточняйте по условиям объекта.</p>
-      </div>
-
-      <div class="calc-card">
-        <h2>Мёртвый объём по Rz</h2>
-        <p class="hint">Дополнительная толщина на заполнение профиля поверхности</p>
-        <div class="calc-row">
-          <div><label>Rz (профиль), мкм</label><input type="number" id="rz_val" value="50" min="0" step="1"></div>
-          <div><label>Коэффициент</label><input type="number" id="rz_k" value="0.2" min="0" max="1" step="0.05"></div>
-        </div>
-        <div class="calc-result" id="rz_out">—</div>
-      </div>
-
-      <div class="calc-card">
-        <h2>Точка росы (приближённо)</h2>
-        <p class="hint">Ориентир по температуре воздуха и относительной влажности. Не заменяет психрометр на объекте.</p>
-        <div class="calc-row">
-          <div><label>Температура воздуха, °C</label><input type="number" id="dp_t" value="20" step="0.5"></div>
-          <div><label>Относительная влажность, %</label><input type="number" id="dp_rh" value="70" min="1" max="100" step="1"></div>
-        </div>
+        <p class="calc-note">Ориентир потерь: безвоздушное 20–30%, пневматическое ~40%.</p></div>
+      <div class="calc-card"><h2>Мёртвый объём по Rz</h2><p class="hint">Доп. толщина на заполнение профиля</p>
+        <div class="calc-row"><div><label>Rz, мкм</label><input type="number" id="rz_val" value="50"></div><div><label>Коэффициент</label><input type="number" id="rz_k" value="0.2" step="0.05"></div></div>
+        <div class="calc-result" id="rz_out">—</div></div>
+      <div class="calc-card"><h2>Точка росы (приближённо)</h2><p class="hint">По температуре воздуха и относительной влажности</p>
+        <div class="calc-row"><div><label>Т воздуха, °C</label><input type="number" id="dp_t" value="20" step="0.5"></div><div><label>Влажность, %</label><input type="number" id="dp_rh" value="70"></div></div>
         <div class="calc-result" id="dp_out">—</div>
-        <p class="calc-note">Температура поверхности должна быть выше точки росы минимум на 3 °C.</p>
-      </div>
-
+        <p class="calc-note">Поверхность выше точки росы минимум на 3 °C.</p></div>
     </div>
     <p style="margin-top:32px"><a href="raschet.html" class="btn btn-primary">Получить точный расчёт и КП</a></p>
   </div></section>
-
+  <section class="section" style="background:var(--color-bg);"><div class="container" style="max-width:860px;">
+    <h2 class="section-title">Частые вопросы по расчёту ЛКМ</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Чем отличаются WFT и DFT?</summary><div class="faq-answer">WFT — толщина мокрой плёнки сразу после нанесения. DFT — толщина сухой плёнки после испарения растворителей. DFT = WFT × (сухой остаток по объёму / 100).</div></details>
+      <details class="faq-item"><summary>Как учитывать потери при нанесении?</summary><div class="faq-answer">Практический расход = теоретический × 100 / (100 − потери%). Ориентир: безвоздушное 20–30%, пневматическое около 40%. Точные потери зависят от объекта.</div></details>
+      <details class="faq-item"><summary>Что такое мёртвый объём по Rz?</summary><div class="faq-answer">Дополнительная толщина покрытия на заполнение профиля шероховатости поверхности (Rz). Примерно Rz × коэффициент (часто 0,2).</div></details>
+      <details class="faq-item"><summary>Зачем считать точку росы?</summary><div class="faq-answer">Чтобы не наносить покрытие на влажную поверхность. Температура поверхности должна быть выше точки росы минимум на 3 °C.</div></details>
+      <details class="faq-item"><summary>Можно ли использовать калькулятор вместо коммерческого расчёта?</summary><div class="faq-answer">Нет. Калькуляторы — ориентир. Для КП и точного расхода по объекту оставьте заявку на расчёт.</div></details>
+    </div>
+  </div></section>
   <footer class="footer"></footer>
   <script src="js/nav.js"></script>
   <script>
@@ -135,41 +102,15 @@
     function calcDft(){var w=num('dft_wft'),v=num('dft_vs');set('dft_out','DFT ≈ '+(w*(v/100)).toFixed(1)+' мкм');}
     function calcVs(){var d=num('vs_dft'),w=num('vs_wft');if(w>0)set('vs_out','Сухой остаток ≈ '+((d/w)*100).toFixed(1)+' %');}
     function calcCov(){var v=num('cov_vs'),d=num('cov_dft');if(d>0)set('cov_out','≈ '+((v/100)*1000/d).toFixed(2)+' м²/л');}
-    function calcCons(){
-      var d=num('cons_dft'),v=num('cons_vs'),a=num('cons_area'),l=num('cons_loss');
-      if(d>0&&v>0&&(100-l)>0){
-        var theo=(d/((v/100)*1000))*a;
-        var prac=theo*(100/(100-l));
-        set('cons_out','Теоретически ≈ '+theo.toFixed(2)+' л; с потерями ≈ '+prac.toFixed(2)+' л');
-      }
-    }
+    function calcCons(){var d=num('cons_dft'),v=num('cons_vs'),a=num('cons_area'),l=num('cons_loss');
+      if(d>0&&v>0&&(100-l)>0){var theo=(d/((v/100)*1000))*a;var prac=theo*(100/(100-l));set('cons_out','Теоретически ≈ '+theo.toFixed(2)+' л; с потерями ≈ '+prac.toFixed(2)+' л');}}
     function calcRz(){var r=num('rz_val'),k=num('rz_k');set('rz_out','Доп. толщина ≈ '+(r*k).toFixed(1)+' мкм');}
-    function calcDp(){
-      var t=num('dp_t'),rh=num('dp_rh');
-      if(rh>0&&rh<=100){
-        var a=17.27,b=237.7;
-        var alpha=((a*t)/(b+t))+Math.log(rh/100);
-        var dp=(b*alpha)/(a-alpha);
-        set('dp_out','Точка росы ≈ '+dp.toFixed(1)+' °C; поверхность ≥ '+(dp+3).toFixed(1)+' °C');
-      }
-    }
-    var map=[
-      ['wft_dft','wft_vs','wft_out',calcWft],
-      ['dft_wft','dft_vs','dft_out',calcDft],
-      ['vs_dft','vs_wft','vs_out',calcVs],
-      ['cov_vs','cov_dft','cov_out',calcCov],
-      ['cons_dft','cons_vs','cons_area','cons_loss','cons_out',calcCons],
-      ['rz_val','rz_k','rz_out',calcRz],
-      ['dp_t','dp_rh','dp_out',calcDp]
-    ];
-    map.forEach(function(row){
-      var fn=row[row.length-1];
-      for(var i=0;i<row.length-1;i++){
-        var el=document.getElementById(row[i]);
-        if(el){el.addEventListener('input',fn);el.addEventListener('change',fn);}
-      }
-      fn();
-    });
+    function calcDp(){var t=num('dp_t'),rh=num('dp_rh');
+      if(rh>0&&rh<=100){var a=17.27,b=237.7;var alpha=((a*t)/(b+t))+Math.log(rh/100);var dp=(b*alpha)/(a-alpha);
+        set('dp_out','Точка росы ≈ '+dp.toFixed(1)+' °C; поверхность ≥ '+(dp+3).toFixed(1)+' °C');}}
+    [['wft_dft','wft_vs',calcWft],['dft_wft','dft_vs',calcDft],['vs_dft','vs_wft',calcVs],['cov_vs','cov_dft',calcCov],
+     ['cons_dft','cons_vs','cons_area','cons_loss',calcCons],['rz_val','rz_k',calcRz],['dp_t','dp_rh',calcDp]].forEach(function(row){
+      var fn=row[row.length-1];for(var i=0;i<row.length-1;i++){var el=document.getElementById(row[i]);if(el){el.addEventListener('input',fn);el.addEventListener('change',fn);}}fn();});
   })();
   </script>
 </body>
