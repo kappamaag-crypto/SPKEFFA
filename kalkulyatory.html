@@ -101,9 +101,9 @@
         <label>DFT, мкм</label><input type="number" id="pr_dft" step="any" min="0.1" placeholder="120">
         <label>VS, %</label><input type="number" id="pr_vs" step="any" min="0.1" max="100" placeholder="55">
         <label>Плотность, кг/л</label><input type="number" id="pr_rho" step="any" min="0.1" placeholder="1.35">
-        <label>Потери, %</label><input type="number" id="pr_loss" step="any" min="0" max="100" value="20" placeholder="20">
+        <label>Потери, %</label><input type="number" id="pr_loss" step="any" min="0" max="99.9" value="20" placeholder="20">
         <div class="calc-result" id="pr_out">— <span>кг/м²</span></div>
-        <p class="calc-note-sm">Практический = теоретический × (1 + потери/100)</p>
+        <p class="calc-note-sm">K<sub>потерь</sub> = 100 / (100 − потери%). Практический = теоретический × K<sub>потерь</sub></p>
       </div>
 
       <div class="calc-card">
@@ -151,7 +151,7 @@
     function calcVs(){var d=num('vs_dft'),w=num('vs_wft');if(d===null||w===null||w<=0)return setOut('vs_out',null,'%');setOut('vs_out',d/w*100,'%')}
     function calcCov(){var v=num('cov_vs'),d=num('cov_dft'),r=num('cov_rho');if(v===null||d===null||r===null||d<=0||r<=0)return setOut('cov_out',null,'м²/кг');setOut('cov_out',v*10/(d*r),'м²/кг')}
     function calcTh(){var d=num('th_dft'),v=num('th_vs'),r=num('th_rho');if(d===null||v===null||r===null||v<=0)return setOut('th_out',null,'кг/м²');setOut('th_out',d*r/(v*10),'кг/м²')}
-    function calcPr(){var d=num('pr_dft'),v=num('pr_vs'),r=num('pr_rho'),l=num('pr_loss');if(d===null||v===null||r===null||v<=0)return setOut('pr_out',null,'кг/м²');if(l===null)l=0;setOut('pr_out',d*r/(v*10)*(1+l/100),'кг/м²')}
+    function calcPr(){var d=num('pr_dft'),v=num('pr_vs'),r=num('pr_rho'),l=num('pr_loss');if(d===null||v===null||r===null||v<=0)return setOut('pr_out',null,'кг/м²');if(l===null)l=0;if(l>=100)return setOut('pr_out',null,'кг/м²');var k=100/(100-l);setOut('pr_out',d*r/(v*10)*k,'кг/м²')}
     function calcRz(){var z=num('rz_val'),v=num('rz_vs'),r=num('rz_rho');if(z===null||v===null||r===null||v<=0)return setOut('rz_out',null,'кг/м²');setOut('rz_out',(z*r*0.8)/(10*v),'кг/м²')}
     function calcDp(){var t=num('dp_t'),rh=num('dp_rh');if(t===null||rh===null||rh<=0||rh>100)return setOut('dp_out',null,'°C');var a=17.625,b=243.04,alpha=Math.log(rh/100)+(a*t)/(b+t);setOut('dp_out',(b*alpha)/(a-alpha),'°C')}
     var map=[['wft_dft','wft_vs',calcWft],['dft_wft','dft_vs',calcDft],['vs_dft','vs_wft',calcVs],['cov_vs','cov_dft','cov_rho',calcCov],['th_dft','th_vs','th_rho',calcTh],['pr_dft','pr_vs','pr_rho','pr_loss',calcPr],['rz_val','rz_vs','rz_rho',calcRz],['dp_t','dp_rh',calcDp]];
