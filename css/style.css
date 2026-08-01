@@ -503,7 +503,7 @@ a {
 
 .product-image--brand {
   background: linear-gradient(135deg, #2c5282, #1a365d);
-  padding: 20px;
+  padding: 28px 20px;
 }
 
 .product-image--brand.brand-effa {
@@ -515,18 +515,18 @@ a {
 }
 
 .product-image--brand img {
-  max-height: 48px;
+  max-height: 72px;
   width: auto;
-  max-width: 80%;
+  max-width: 90%;
   object-fit: contain;
   margin: 0 auto;
 }
 
 .product-image--brand img.blank-logo {
-  max-height: 36px;
+  max-height: 52px;
   background: #2a2a2a;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
 }
 
 .product-info {
