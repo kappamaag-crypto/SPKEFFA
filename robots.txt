@@ -1,17 +1,21 @@
 # robots.txt для https://spk-effa.ru/
-# Обновлено: 2026-07-29
+# Обновлено: 2026-08-01
 
 User-agent: *
 Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
 Disallow: /docs/README.md
+Disallow: /products/
+Disallow: /404.html
 
 User-agent: Googlebot
 Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
 Disallow: /docs/README.md
+Disallow: /products/
+Disallow: /404.html
 
 User-agent: Googlebot-Image
 Allow: /
@@ -21,6 +25,8 @@ Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
 Disallow: /docs/README.md
+Disallow: /products/
+Disallow: /404.html
 Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ysclid&gclid&fbclid
 
 User-agent: YandexBot
@@ -28,6 +34,8 @@ Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
 Disallow: /docs/README.md
+Disallow: /products/
+Disallow: /404.html
 Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ysclid&gclid&fbclid
 
 User-agent: YandexImages
@@ -38,6 +46,8 @@ Allow: /
 Disallow: /yandex_263ea89542f6f9ea.html
 Disallow: /.well-known/
 Disallow: /docs/README.md
+Disallow: /products/
+Disallow: /404.html
 
 Host: https://spk-effa.ru
 
