@@ -135,10 +135,8 @@
           '</a>' +
           '<p>Официальный представитель ТМ Blank, ЭФФА и Veksa.</p>' +
           '<p class="footer-contacts">' +
-            '<a href="tel:+' + PHONE + '">' + PHONE_DISPLAY + '</a>' +
-            ' · ' +
-            '<a href="tel:+73472460426">+7 (347) 246-04-26</a>' +
-            ' · ' +
+            '<a href="tel:+73472460426">+7 (347) 246-04-26</a><br>' +
+            '<a href="tel:+' + PHONE + '">' + PHONE_DISPLAY + '</a><br>' +
             '<a href="mailto:info@spk-effa.ru">info@spk-effa.ru</a>' +
           '</p>' +
           '<p class="footer-messengers">' +
