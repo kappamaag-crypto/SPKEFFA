@@ -26,3 +26,44 @@
   margin: 0 auto;
   display: block;
 }
+
+/* Unified height: "Весь раздел" brand cards match product cards */
+.product-image--brand {
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  background: #1a365d;
+}
+.product-image--brand img {
+  max-height: 56px;
+  max-width: 70%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.product-image--brand.brand-effa {
+  background: #c45c12;
+}
+.product-image--brand.brand-veksa {
+  background: #1e4d8c;
+}
+/* Equal card heights in a row */
+.products-grid {
+  align-items: stretch;
+}
+.products-grid .product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.products-grid .product-info {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 110px;
+}
