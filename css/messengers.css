@@ -1,17 +1,17 @@
-/* Блок контактов справа: после «Контакты», без перекрытия меню */
+/* Блок контактов справа — отдельная зона, не перекрывает меню и логотип */
 .header-contacts {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
   gap: 3px;
-  flex-shrink: 0;
-  margin-left: 14px;
-  padding-left: 14px;
+  flex: 0 0 auto;
+  margin-left: 8px;
+  padding-left: 10px;
   border-left: 1px solid var(--color-border, #e2e8f0);
   background: #fff;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .header-messengers {
