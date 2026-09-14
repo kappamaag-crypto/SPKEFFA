@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8f9fc"/>
+      <stop offset="100%" stop-color="#eef1f6"/>
+    </linearGradient>
+    <linearGradient id="canBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f7fa"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8eef5"/>
+      <stop offset="100%" stop-color="#d0d8e4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-10%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="750" fill="url(#bg)"/>
+  
+  <!-- Can shadow ellipse -->
+  <ellipse cx="300" cy="640" rx="160" ry="28" fill="#000" opacity="0.12"/>
+  
+  <!-- Can body -->
+  <g filter="url(#shadow)">
+    <rect x="150" y="130" width="300" height="480" rx="18" ry="18" fill="url(#canBody)" stroke="#1a365d" stroke-width="4"/>
+  </g>
+  
+  <!-- Top lid -->
+  <ellipse cx="300" cy="115" rx="158" ry="38" fill="url(#lid)" stroke="#1a365d" stroke-width="3"/>
+  <ellipse cx="300" cy="108" rx="130" ry="22" fill="#f0f4f9" stroke="#a0aec0" stroke-width="1"/>
+  
+  <!-- Label panel -->
+  <rect x="172" y="185" width="256" height="340" fill="#1a365d"/>
+  
+  <!-- Orange accent top -->
+  <rect x="172" y="185" width="256" height="14" fill="#e67e22"/>
+  
+  <!-- Brand -->
+  <text x="300" y="250" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#ffffff" text-anchor="middle">ЭФФА</text>
+  
+  <!-- Product name -->
+  <text x="300" y="305" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#e67e22" text-anchor="middle">ПУ-026</text>
+  
+  <!-- Divider -->
+  <line x1="200" y1="330" x2="400" y2="330" stroke="#4a6a8a" stroke-width="1"/>
+  
+  <!-- Description -->
+  <text x="300" y="365" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#c8d4e4" text-anchor="middle">Полиуретановый</text>
+  <text x="300" y="390" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#c8d4e4" text-anchor="middle">огнезащитный состав</text>
+  
+  <text x="300" y="435" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#9eb0c8" text-anchor="middle">Двухкомпонентный</text>
+  <text x="300" y="458" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#9eb0c8" text-anchor="middle">вспучивающийся</text>
+  
+  <!-- Bottom orange bar -->
+  <rect x="172" y="470" width="256" height="55" fill="#e67e22"/>
+  <text x="300" y="505" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">20 кг</text>
+  
+  <!-- Tagline -->
+  <text x="300" y="700" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#8896a8" text-anchor="middle">современная огнезащита</text>
+</svg>
