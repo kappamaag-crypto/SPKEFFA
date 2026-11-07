@@ -34,10 +34,10 @@ def target_of(page: Path, url: str) -> Path | None:
     else:
         rel = posixpath.join(page.parent.relative_to(ROOT).as_posix(), path)
     rel = posixpath.normpath(rel)
-    if rel in ("", "."):
-        rel = "index.html"
     if path.endswith("/"):
-        rel = rel.rstrip("/") + "/index.html"
+        rel = "index.html" if rel in ("", ".") else rel.rstrip("/") + "/index.html"
+    elif rel in ("", "."):
+        rel = "index.html"
     out = (ROOT / rel).resolve()
     if not out.is_relative_to(ROOT):
         raise ValueError("Ссылка выходит за пределы сайта: " + url)
@@ -135,7 +135,7 @@ def run() -> int:
             fail(rel, "HTML не разобран: " + str(exc))
             continue
 
-        noindex = "noindex" in parser.meta.get("robots", "").lower()
+        noindex = "noindex" in parser.meta.get("robots", "").lower() or rel.startswith("yandex_")
         if not noindex:
             indexable.add(canonical_of(page))
             if not parser.title.strip():
