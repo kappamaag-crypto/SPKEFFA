@@ -192,6 +192,19 @@
   function injectBreadcrumbJsonLd() {
     var el = document.querySelector('.breadcrumb');
     if (!el || document.getElementById('ld-breadcrumb')) return;
+    // Не вставлять вторую BreadcrumbList, если страница уже содержит статическую разметку.
+    var scripts = document.querySelectorAll('script[type="application/ld+json"]');
+    for (var i = 0; i < scripts.length; i++) {
+      try {
+        var data = JSON.parse(scripts[i].textContent || '{}');
+        var candidates = data['@graph'] || [data];
+        if (!Array.isArray(candidates)) candidates = [candidates];
+        if (candidates.some(function (item) {
+          var type = item && item['@type'];
+          return type === 'BreadcrumbList' || (Array.isArray(type) && type.includes('BreadcrumbList'));
+        })) return;
+      } catch (e) { /* Невалидный чужой JSON-LD не мешает навигации. */ }
+    }
     var items = [];
     var position = 1;
     el.querySelectorAll('a').forEach(function (a) {
