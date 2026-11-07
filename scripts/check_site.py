@@ -129,7 +129,10 @@ def run() -> int:
         rel = page.relative_to(ROOT).as_posix()
         parser = PageParser()
         try:
-            parser.feed(page.read_text(encoding="utf-8"))
+            html = page.read_text(encoding="utf-8")
+            if r"\n  <link" in html:
+                fail(rel, "буквальный escape \\n перед тегом <link>")
+            parser.feed(html)
             parser.close()
         except Exception as exc:
             fail(rel, "HTML не разобран: " + str(exc))
