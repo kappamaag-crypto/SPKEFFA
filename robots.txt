@@ -49,7 +49,5 @@ Disallow: /docs/README.md
 Disallow: /products/
 Disallow: /404.html
 
-Host: https://spk-effa.ru
-
 Sitemap: https://spk-effa.ru/sitemap.xml
 Sitemap: https://spk-effa.ru/sitemap-image.xml

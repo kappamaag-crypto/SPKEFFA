@@ -17,7 +17,7 @@ pip install pdf2image pytesseract
 ### Запуск
 
 ```bash
-# все 20 страниц
+# все 23 страницы
 python3 scripts/verify_tds.py
 
 # с OCR для сканированных PDF
@@ -57,3 +57,7 @@ python3 scripts/verify_tds.py --json /tmp/tds-report.json
 ```
 
 Exit code ≠ 0 при наличии FAIL.
+
+## Быстрый CI-аудит
+
+`python3 scripts/check_site.py` проверяет URL страниц, изображения, PDF, SEO-метаданные, JSON-LD и покрытие TDS-картой. Работает на стандартной библиотеке Python, не отправляет данные на сайт и не делает запросов в интернет.

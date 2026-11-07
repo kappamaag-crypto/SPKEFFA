@@ -14,7 +14,8 @@
   <meta property="og:title" content="Заявка на расчёт системы">
   <meta property="og:description" content="Заявка на расчёт расхода ЛКМ и коммерческое предложение: Blank, ЭФФА, Veksa. Укажите категорию среды или предел R — подготовим систему, расход и КП. По России и СНГ.">
   <meta property="og:image" content="https://spk-effa.ru/favicon.png">
-  <link rel="icon" href="/favicon.png" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="256x256">
   <meta name="theme-color" content="#1a365d">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
@@ -52,18 +53,19 @@
       <div class="calc-block" style="border: none; padding: 0;">
         <p class="calc-note">Заполните поля — ответим в рабочее время. Можно указать только телефон и кратко описать задачу.</p>
         <form class="calc-form" action="https://formspree.io/f/mdaqywrn" method="POST">
+          <div class="visually-hidden" aria-hidden="true" style="position:absolute;left:-9999px;"><label for="website">Оставьте поле пустым</label><input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
           <input type="hidden" name="_subject" value="Заявка на расчёт — spk-effa.ru">
           <label for="name">Имя / компания</label>
-          <input type="text" id="name" name="name" placeholder="ООО «…» или ФИО" required>
+          <input type="text" id="name" name="name" autocomplete="name" maxlength="160" placeholder="ООО «…» или ФИО" required>
 
           <div class="form-row">
             <div>
               <label for="phone">Телефон</label>
-              <input type="tel" id="phone" name="phone" placeholder="+7 …" required>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" maxlength="40" placeholder="+7 …" required>
             </div>
             <div>
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="optional@mail.ru">
+              <input type="email" id="email" name="email" autocomplete="email" maxlength="254" placeholder="optional@mail.ru">
             </div>
           </div>
 
@@ -106,8 +108,13 @@
           <label for="message">Комментарий</label>
           <textarea id="message" name="message" rows="4" placeholder="Объект, сроки, особые условия…"></textarea>
 
+          <label class="consent-check">
+            <input type="checkbox" name="privacy_consent" value="yes" required>
+            <span>Я даю согласие на обработку указанных данных для ответа на заявку. Ознакомлен(а) с <a href="/privacy.html" target="_blank" rel="noopener noreferrer">политикой обработки персональных данных</a>.</span>
+          </label>
+          <p class="form-note">Форма отправляется через сервис Formspree (США). Если не хотите использовать сторонний сервис, свяжитесь с нами по телефону или по <a href="mailto:info@spk-effa.ru">электронной почте</a>.</p>
           <button type="submit" class="btn btn-primary">Получить расчёт и КП</button>
-          <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+          
         </form>
       </div>
       <p style="margin-top: 28px; text-align: center; color: var(--color-text-light);">

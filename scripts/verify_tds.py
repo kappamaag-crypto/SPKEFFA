@@ -43,8 +43,11 @@ PAGE_TO_TDS: dict[str, str] = {
     "ognezaschita/effa-kt01.html": "docs/effa/EFFA_01_organic_and_EFFA_KT01_organic.pdf",
     "ognezaschita/effa-01b.html": "docs/effa/EFFA_01B.pdf",
     "ognezaschita/effa-kabel.html": "docs/effa/EFFA_cable.pdf",
+    "ognezaschita/effa-pu-026.html": "docs/effa/Технический_паспорт_ЭФФА_ПУ_026.pdf",
     "veksa/pr-10.html": "docs/veksa/VEKSA_PR_10.pdf",
     "veksa/pp-11.html": "docs/veksa/VEKSA_PP_11.pdf",
+    "veksa/ep-20.html": "docs/veksa/VEKSA_EP_20.pdf",
+    "veksa/ep-21.html": "docs/veksa/VEKSA_EP_21.pdf",
 }
 
 PARAM_ALIASES = {
