@@ -18,3 +18,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Check links, PDF, sitemap and SEO
         run: python3 scripts/check_site.py
+      - name: Set up Node for contact-form tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test Yandex Forms switch and FAQ placement
+        run: node --test scripts/test_yandex_embed.cjs
