@@ -1,14 +1,15 @@
 /* Настройка встроенной заявки через Яндекс Формы.
    Поля и отступы внутри iframe задаются в конструкторе Яндекс Форм. */
-.contacts .container{max-width:1060px}
+.contacts .container{max-width:1140px}
 .contacts-grid{
-  grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr);
-  gap:clamp(32px,5vw,56px);
+  grid-template-columns:minmax(260px,360px) minmax(300px,420px);
+  justify-content:center;
+  gap:clamp(36px,5vw,64px);
   align-items:start;
 }
 .contact-info{padding-top:3px}
 .contact-form-wrapper{min-width:0}
-.yandex-form-embed{width:100%;max-width:620px;min-width:0}
+.yandex-form-embed{width:100%;min-width:0}
 .yandex-form-embed h3{font-size:1.15rem;color:var(--color-primary);margin:0 0 8px}
 .yandex-form-frame{
   display:block;
