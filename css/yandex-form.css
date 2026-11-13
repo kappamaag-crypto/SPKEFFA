@@ -1,17 +1,29 @@
-/* Настройка встроенной заявки через Яндекс Формы */
-.yandex-form-embed{width:100%;min-width:0}
-.yandex-form-embed h3{font-size:1.15rem;color:var(--color-primary);margin:0 0 10px}
+/* Настройка встроенной заявки через Яндекс Формы.
+   Поля и отступы внутри iframe задаются в конструкторе Яндекс Форм. */
+.contacts .container{max-width:1060px}
+.contacts-grid{
+  grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr);
+  gap:clamp(32px,5vw,56px);
+  align-items:start;
+}
+.contact-info{padding-top:3px}
+.contact-form-wrapper{min-width:0}
+.yandex-form-embed{width:100%;max-width:620px;min-width:0}
+.yandex-form-embed h3{font-size:1.15rem;color:var(--color-primary);margin:0 0 8px}
 .yandex-form-frame{
   display:block;
   width:100%;
-  height:680px;
-  min-height:680px;
+  height:540px;
+  min-height:540px;
   border:0;
   background:#fff;
   border-radius:8px;
 }
-.yandex-form-note{font-size:.81rem;line-height:1.55;margin:10px 0 0}
+.yandex-form-note{font-size:.81rem;line-height:1.55;margin:8px 0 0}
 .yandex-form-note a{color:var(--color-primary);text-decoration:underline;text-underline-offset:2px}
 @media(max-width:768px){
-  .yandex-form-frame{height:820px;min-height:820px}
+  .contacts-grid{grid-template-columns:1fr;gap:28px}
+  .contact-info{padding-top:0}
+  .yandex-form-embed{max-width:none}
+  .yandex-form-frame{height:560px;min-height:560px}
 }
