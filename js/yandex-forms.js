@@ -37,6 +37,7 @@
   var frame = document.createElement('iframe');
   frame.className = 'yandex-form-frame';
   frame.src = target.href;
+  frame.name = 'ya-form-' + target.pathname.replace(/\/$/, '').split('/').pop();
   frame.title = 'Яндекс Форма — заявка в СПК ЭФФА';
   frame.loading = 'lazy';
   frame.referrerPolicy = 'strict-origin-when-cross-origin';
