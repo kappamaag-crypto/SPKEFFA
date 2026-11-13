@@ -47,7 +47,8 @@ test('main promo appears after FAQ with the same max width',()=>{
 test('unconfigured Yandex URL retains the existing functioning contact form',()=>{
  const r=evaluate('');
  assert.equal(r.replaced,false);
- assert.ok(html.includes('data-yandex-form-url=""'));
+ assert.ok(html.includes('data-yandex-form-url="https://forms.yandex.ru/u/6af6db4f6d2d7321e7750737/"'));
+ assert.ok(html.includes('https://forms.yandex.ru/_static/embed.js'));
  assert.ok(html.includes('action="https://formspree.io/f/mdaqywrn"'));
 });
 
@@ -60,6 +61,7 @@ test('published official Yandex form safely embeds and links privacy policy',()=
  assert.match(frame.src,/^https:\/\/forms\.yandex\.ru\/u\/5e2ac2d123456789\/\?/);
  assert.ok(frame.src.includes('iframe=1'));
  assert.equal(frame.title,'Яндекс Форма — заявка в СПК ЭФФА');
+ assert.equal(frame.name,'ya-form-5e2ac2d123456789');
  assert.equal(note.children.some(x=>x.href==='/privacy.html'),true);
 });
 
