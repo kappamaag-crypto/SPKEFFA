@@ -1,5 +1,4 @@
 /* Раскрой PRO: два ненавязчивых анонса в оформлении СПК ЭФФА. */
-.raskroy-section{background:var(--color-bg)}
 .raskroy-promo,.raskroy-card{
   background:var(--color-white);
   border:1px solid var(--color-border);
@@ -45,3 +44,6 @@
   .raskroy-action{align-items:stretch}
   .raskroy-action .btn{white-space:normal}
 }
+
+/* Карточка на главной выровнена по ширине блока часто задаваемых вопросов. */
+.raskroy-promo{max-width:800px;margin:28px auto 0}
