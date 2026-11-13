@@ -22,9 +22,12 @@
 }
 .yandex-form-note{font-size:.81rem;line-height:1.55;margin:8px 0 0}
 .yandex-form-note a{color:var(--color-primary);text-decoration:underline;text-underline-offset:2px}
+.yandex-form-embed--calculation{max-width:640px;margin:0 auto}
+.yandex-form-embed--calculation .yandex-form-frame{height:800px;min-height:800px}
 @media(max-width:768px){
   .contacts-grid{grid-template-columns:1fr;gap:28px}
   .contact-info{padding-top:0}
   .yandex-form-embed{max-width:none}
   .yandex-form-frame{height:560px;min-height:560px}
+  .yandex-form-embed--calculation .yandex-form-frame{height:920px;min-height:920px}
 }

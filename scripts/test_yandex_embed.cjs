@@ -6,6 +6,7 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const source = fs.readFileSync(path.join(root,'js/yandex-forms.js'),'utf8');
 const html = fs.readFileSync(path.join(root,'index.html'),'utf8');
+const calculationHtml = fs.readFileSync(path.join(root,'raschet.html'),'utf8');
 const css = fs.readFileSync(path.join(root,'css/raskroy-promo.css'),'utf8');
 
 function evaluate(urlValue) {
@@ -26,7 +27,7 @@ function evaluate(urlValue) {
   };
   const document = {
     querySelector(selector) {
-      assert.equal(selector,'.contact-form-wrapper[data-yandex-form-url]');
+      assert.equal(selector,'[data-yandex-form-url]');
       return container;
     },
     createElement: element,
@@ -60,7 +61,7 @@ test('published official Yandex form safely embeds and links privacy policy',()=
  assert.equal(frame.tag,'iframe');
  assert.match(frame.src,/^https:\/\/forms\.yandex\.ru\/u\/5e2ac2d123456789\/\?/);
  assert.ok(frame.src.includes('iframe=1'));
- assert.equal(frame.title,'Яндекс Форма — заявка в СПК ЭФФА');
+ assert.equal(frame.title,'Яндекс Форма — Оставить заявку');
  assert.equal(frame.name,'ya-form-5e2ac2d123456789');
  assert.equal(note.children.some(x=>x.href==='/privacy.html'),true);
 });
@@ -77,4 +78,11 @@ test('main page references the optional Yandex module and iframe stylesheet',()=
  assert.ok(html.includes('<script src="js/yandex-forms.js"></script>'));
  assert.ok(html.includes('<link rel="stylesheet" href="css/yandex-form.css">'));
  assert.ok(fs.existsSync(path.join(root,'docs/YANDEX_FORMS.md')));
+});
+
+test('calculation page uses its published Yandex form instead of Formspree',()=>{
+ assert.ok(calculationHtml.includes('data-yandex-form-url="https://forms.yandex.ru/u/6af6eaa9b9e5ca5bc235b0ed/"'));
+ assert.ok(calculationHtml.includes('<script src="js/yandex-forms.js"></script>'));
+ assert.ok(calculationHtml.includes('<link rel="stylesheet" href="css/yandex-form.css">'));
+ assert.ok(!calculationHtml.includes('formspree.io'));
 });
