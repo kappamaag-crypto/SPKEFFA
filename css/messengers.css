@@ -107,6 +107,39 @@
   text-decoration: underline;
 }
 
+.cookie-notice {
+  position: fixed;
+  z-index: 1000;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 560px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 10px;
+  background: #1a365d;
+  box-shadow: 0 8px 28px rgba(15, 36, 64, .25);
+  color: #fff;
+  font-size: .88rem;
+  line-height: 1.45;
+}
+.cookie-notice p { margin: 0; }
+.cookie-notice a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.cookie-notice__button {
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 6px;
+  padding: 9px 13px;
+  background: var(--color-accent, #e67e22);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cookie-notice__button:hover { filter: brightness(1.06); }
+
 @media (max-width: 900px) {
   .header-contacts {
     order: 3;
@@ -117,6 +150,7 @@
 }
 
 @media (max-width: 480px) {
+  .cookie-notice { right: 10px; bottom: 10px; left: 10px; align-items: flex-start; flex-direction: column; gap: 10px; }
   .msg-btn {
     width: 30px;
     height: 30px;

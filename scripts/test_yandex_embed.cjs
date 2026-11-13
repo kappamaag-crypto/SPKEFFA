@@ -45,12 +45,13 @@ test('main promo appears after FAQ with the same max width',()=>{
  assert.ok(css.includes('.raskroy-promo{max-width:800px;'));
 });
 
-test('unconfigured Yandex URL retains the existing functioning contact form',()=>{
+test('unconfigured Yandex URL retains a direct Yandex Forms fallback',()=>{
  const r=evaluate('');
  assert.equal(r.replaced,false);
  assert.ok(html.includes('data-yandex-form-url="https://forms.yandex.ru/u/6af6db4f6d2d7321e7750737/"'));
  assert.ok(html.includes('https://forms.yandex.ru/_static/embed.js'));
- assert.ok(html.includes('action="https://formspree.io/f/mdaqywrn"'));
+ assert.ok(html.includes('action="https://forms.yandex.ru/u/6af6db4f6d2d7321e7750737/"'));
+ assert.ok(!html.includes('formspree.io'));
 });
 
 test('published official Yandex form safely embeds and links privacy policy',()=>{
@@ -80,9 +81,16 @@ test('main page references the optional Yandex module and iframe stylesheet',()=
  assert.ok(fs.existsSync(path.join(root,'docs/YANDEX_FORMS.md')));
 });
 
-test('calculation page uses its published Yandex form instead of Formspree',()=>{
+test('calculation page uses its published Yandex form',()=>{
  assert.ok(calculationHtml.includes('data-yandex-form-url="https://forms.yandex.ru/u/6af6eaa9b9e5ca5bc235b0ed/"'));
  assert.ok(calculationHtml.includes('<script src="js/yandex-forms.js"></script>'));
  assert.ok(calculationHtml.includes('<link rel="stylesheet" href="css/yandex-form.css">'));
  assert.ok(!calculationHtml.includes('formspree.io'));
+});
+
+test('site shell includes a dismissible technical-cookie notice',()=>{
+ const nav = fs.readFileSync(path.join(root,'js/nav.js'),'utf8');
+ assert.ok(nav.includes("spk-effa-cookie-notice-v1"));
+ assert.ok(nav.includes('cookie-notice'));
+ assert.ok(nav.includes('Яндекс Формы'));
 });

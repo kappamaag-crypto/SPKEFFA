@@ -250,6 +250,28 @@
     });
   }
 
+  function ensureCookieNotice() {
+    var storageKey = 'spk-effa-cookie-notice-v1';
+    try {
+      if (window.localStorage.getItem(storageKey)) return;
+    } catch (e) { /* Уведомление всё равно показывается, если storage недоступен. */ }
+    if (document.getElementById('cookie-notice')) return;
+
+    var notice = document.createElement('aside');
+    notice.id = 'cookie-notice';
+    notice.className = 'cookie-notice';
+    notice.setAttribute('role', 'status');
+    notice.setAttribute('aria-label', 'Уведомление о cookie');
+    notice.innerHTML =
+      '<p>На сайте используются встроенные Яндекс Формы. При их открытии сервис может применять технические cookie. Подробнее — в <a href="/privacy.html">Политике обработки персональных данных</a>.</p>' +
+      '<button type="button" class="cookie-notice__button">Понятно</button>';
+    document.body.appendChild(notice);
+    notice.querySelector('button').addEventListener('click', function () {
+      try { window.localStorage.setItem(storageKey, '1'); } catch (e) { /* Не мешаем закрыть уведомление. */ }
+      notice.remove();
+    });
+  }
+
   function init() {
     ensureStyles();
     ensureNav();
@@ -258,6 +280,7 @@
     wrapSpecTables();
     injectBreadcrumbJsonLd();
     ensureFormConsent();
+    ensureCookieNotice();
   }
 
   if (document.readyState === 'loading') {
