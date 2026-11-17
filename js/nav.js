@@ -1,5 +1,5 @@
 /**
- * Единое меню, футер, мессенджеры, нормализация кнопок, BreadcrumbList JSON-LD, согласие 152-ФЗ.
+ * Единое меню, футер, мессенджеры, нормализация кнопок и BreadcrumbList JSON-LD.
  */
 (function () {
   var PHONE = '79829059348';
@@ -234,44 +234,6 @@
     document.head.appendChild(script);
   }
 
-  function ensureFormConsent() {
-    document.querySelectorAll('form').forEach(function (form) {
-      if (form.querySelector('.consent-check')) return;
-      var btn = form.querySelector('button[type="submit"]');
-      if (!btn) return;
-      var wrap = document.createElement('label');
-      wrap.className = 'consent-check';
-      wrap.innerHTML =
-        '<input type="checkbox" name="privacy_consent" value="yes" required>' +
-        '<span>Согласен на <a href="/privacy.html" target="_blank" rel="noopener">обработку персональных данных</a></span>';
-      btn.parentNode.insertBefore(wrap, btn);
-      var note = form.querySelector('.form-note');
-      if (note) note.innerHTML = 'Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>';
-    });
-  }
-
-  function ensureCookieNotice() {
-    var storageKey = 'spk-effa-cookie-notice-v1';
-    try {
-      if (window.localStorage.getItem(storageKey)) return;
-    } catch (e) { /* Уведомление всё равно показывается, если storage недоступен. */ }
-    if (document.getElementById('cookie-notice')) return;
-
-    var notice = document.createElement('aside');
-    notice.id = 'cookie-notice';
-    notice.className = 'cookie-notice';
-    notice.setAttribute('role', 'status');
-    notice.setAttribute('aria-label', 'Уведомление о cookie');
-    notice.innerHTML =
-      '<p>На сайте используются встроенные Яндекс Формы. При их открытии сервис может применять технические cookie. Подробнее — в <a href="/privacy.html">Политике обработки персональных данных</a>.</p>' +
-      '<button type="button" class="cookie-notice__button">Понятно</button>';
-    document.body.appendChild(notice);
-    notice.querySelector('button').addEventListener('click', function () {
-      try { window.localStorage.setItem(storageKey, '1'); } catch (e) { /* Не мешаем закрыть уведомление. */ }
-      notice.remove();
-    });
-  }
-
   function init() {
     ensureStyles();
     ensureNav();
@@ -279,8 +241,6 @@
     normalizeDocButtons();
     wrapSpecTables();
     injectBreadcrumbJsonLd();
-    ensureFormConsent();
-    ensureCookieNotice();
   }
 
   if (document.readyState === 'loading') {

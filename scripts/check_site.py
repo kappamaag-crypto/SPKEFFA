@@ -64,7 +64,6 @@ class PageParser(HTMLParser):
         self.images = 0
         self.missing_alt = 0
         self.pdfs: list[str] = []
-        self.consent = False
         self.forms = 0
         self.jsonld: list[str] = []
         self._script_json = False
@@ -83,8 +82,6 @@ class PageParser(HTMLParser):
                 self.missing_alt += 1
         if tag == "form":
             self.forms += 1
-        if tag == "input" and attrs.get("name") == "privacy_consent":
-            self.consent = "required" in attrs and attrs.get("type") == "checkbox"
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._script_json = True
             self._script_parts = []
@@ -159,8 +156,15 @@ def run() -> int:
             fail(rel, f"изображений без alt: {parser.missing_alt}")
         if parser.pdfs:
             pdf_pages.add(rel)
-        if rel == "raschet.html" and (parser.forms != 1 or not parser.consent):
-            fail(rel, "форма должна иметь обязательный HTML checkbox privacy_consent")
+        if parser.forms:
+            fail(rel, "на сайте не должно быть форм отправки персональных данных")
+        if rel in ("index.html", "raschet.html"):
+            if not any(ref.startswith("mailto:info@spk-effa.ru") for ref in parser.refs):
+                fail(rel, "нет прямой ссылки на электронную почту")
+            if "tel:+79829059348" not in parser.refs:
+                fail(rel, "нет прямой ссылки на телефон")
+            if "forms.yandex.ru" in html or "data-yandex-form-url" in html:
+                fail(rel, "сохранилось встраивание Яндекс Форм")
         for block in parser.jsonld:
             try:
                 json.loads(block)
