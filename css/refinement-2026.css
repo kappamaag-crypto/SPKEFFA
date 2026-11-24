@@ -332,6 +332,22 @@ summary:focus-visible {
   border-color: #cbd5dd;
 }
 
+.doc-btn[href$=".pdf"]::before {
+  content: "PDF";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 22px;
+  padding-inline: 5px;
+  border: 1px solid #bdc8d1;
+  border-radius: 3px;
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
 .doc-btn:hover {
   color: var(--color-accent-hover);
   border-color: var(--color-accent);

@@ -135,6 +135,34 @@ def check() -> list[str]:
         if marker not in home:
             errors.append(f"index.html: missing required block marker {marker}")
 
+    home_faq_answer = (
+        "ООО «СПК ЭФФА» — официальный представитель Blank, ЭФФА и Veksa "
+        "в Уфе. На сайте собраны материалы, документы производителей и "
+        "контакты для запроса поставки."
+    )
+    if home.count(home_faq_answer) != 2:
+        errors.append("index.html: concise company answer must match visible FAQ and JSON-LD")
+    if "Прямые поставки, подбор систем, расчёт расхода, техподдержка." in home:
+        errors.append("index.html: repeated hero boilerplate is still present")
+
+    reference_answers = {
+        "blank/universal.html": (
+            "Базовая эпоксидная грунт-эмаль Blank для систем C3–C5. "
+            "На объекте её используют самостоятельным слоем либо совместно "
+            "с огнезащитой и финишем."
+        ),
+        "ognezaschita/effa-ep-150.html": (
+            "Двухкомпонентный эпоксидный огнезащитный состав для стальных "
+            "конструкций, применяемый в системах на R30–R120."
+        ),
+    }
+    for rel, answer in reference_answers.items():
+        source = (ROOT / rel).read_text(encoding="utf-8")
+        if source.count(answer) != 2:
+            errors.append(f"{rel}: concise first FAQ answer must match JSON-LD")
+        if "Оставьте заявку на странице «Расчёт»" in source:
+            errors.append(f"{rel}: CTA contradicts the no-form contact flow")
+
     return errors
 
 
