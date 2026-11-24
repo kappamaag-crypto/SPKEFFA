@@ -71,6 +71,24 @@ def stylesheet_hrefs(source: str) -> list[str]:
     ]
 
 
+def relative_luminance(hex_color: str) -> float:
+    channels = [int(hex_color[index : index + 2], 16) / 255 for index in (1, 3, 5)]
+    linear = [
+        value / 12.92
+        if value <= 0.04045
+        else ((value + 0.055) / 1.055) ** 2.4
+        for value in channels
+    ]
+    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+
+
+def contrast_ratio(first: str, second: str) -> float:
+    light, dark = sorted(
+        (relative_luminance(first), relative_luminance(second)), reverse=True
+    )
+    return (light + 0.05) / (dark + 0.05)
+
+
 def ordinary_pages() -> list[Path]:
     pages = []
     for path in sorted(ROOT.rglob("*.html")):
@@ -96,6 +114,11 @@ def check() -> list[str]:
             errors.append("refinement CSS must define :focus-visible")
         if "prefers-reduced-motion" not in css:
             errors.append("refinement CSS must support prefers-reduced-motion")
+        accent_match = re.search(r"--color-accent:\s*(#[0-9a-f]{6})", css, re.I)
+        if not accent_match:
+            errors.append("refinement CSS must define --color-accent as a hex color")
+        elif contrast_ratio(accent_match.group(1), "#ffffff") < 4.5:
+            errors.append("accent buttons must reach WCAG AA contrast against white text")
 
     pages = ordinary_pages()
     if len(pages) < 35:
