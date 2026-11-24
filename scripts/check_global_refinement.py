@@ -138,6 +138,8 @@ def check() -> list[str]:
             if glyphs:
                 errors.append(f"{rel}: link contains generated-looking glyphs {glyphs}")
                 break
+        if re.search(r'<span\s+aria-hidden=["\']true["\']>\s*</span>', source, re.I):
+            errors.append(f"{rel}: empty icon span remains after glyph cleanup")
 
     if SERVICE_FILE.exists():
         service_source = SERVICE_FILE.read_text(encoding="utf-8")
