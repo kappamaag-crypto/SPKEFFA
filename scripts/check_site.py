@@ -129,6 +129,19 @@ def run() -> int:
             html = page.read_text(encoding="utf-8")
             if r"\n  <link" in html:
                 fail(rel, "буквальный escape \\n перед тегом <link>")
+            if not rel.startswith("yandex_"):
+                metrika_init = "ym(111090540, 'init'"
+                metrika_tag = "https://mc.yandex.ru/metrika/tag.js?id=111090540"
+                metrika_pixel = "https://mc.yandex.ru/watch/111090540"
+                if any(html.count(value) != 1 for value in (metrika_init, metrika_tag, metrika_pixel)):
+                    fail(rel, "Яндекс Метрика: ожидается ровно один счётчик 111090540")
+                head_end = re.search(r"</head\s*>", html, re.I)
+                body_start = re.search(r"<body\b[^>]*>", html, re.I)
+                noscript = re.search(r"<noscript\b[^>]*>.*?" + re.escape(metrika_pixel) + r".*?</noscript>", html, re.I | re.S)
+                if not head_end or not (0 <= html.find(metrika_init) < head_end.start()):
+                    fail(rel, "Яндекс Метрика: скрипт должен быть в head")
+                if not body_start or not noscript or noscript.start() < body_start.end():
+                    fail(rel, "Яндекс Метрика: noscript должен быть внутри body")
             parser.feed(html)
             parser.close()
         except Exception as exc:
